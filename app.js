@@ -11,7 +11,6 @@
   const products = groups.flatMap(g => g.items.map(([id,name,price]) => ({id,name,price,category:g.category,group:g.name,note:g.note||'',...photos[id]})));
   const byId = Object.fromEntries(products.map(p => [p.id,p]));
   const selection = ['pulpo','croquetas','camarones','fideua','bacon-burger','carpaccio','calamares','solomillo','arroz-negro','bravas','tarta','crema-catalana'];
-  const cocktailGroups = ['Coctelería de autor','Coctelería clásica','Jarras de sangría'];
   const cartKey = 'tinglao-demo-cart';
   let reservation = null, reservationDraft = null;
   let filter = 'seleccion', cart = {}, activeDialog = null, returnFocus = null, toastTimer;
@@ -36,7 +35,7 @@
   }
   function renderProducts() {
     const query=normalized($('#search').value);
-    const list=products.filter(p => query ? normalized(p.name+' '+p.group).includes(query) : filter==='seleccion' ? selection.includes(p.id) : filter==='cocteles' ? cocktailGroups.includes(p.group) : p.category===filter);
+    const list=products.filter(p => query ? normalized(p.name+' '+p.group).includes(query) : filter==='seleccion' ? selection.includes(p.id) : p.category===filter);
     if(!query && filter==='seleccion')list.sort((a,b)=>selection.indexOf(a.id)-selection.indexOf(b.id));
     const featured=list.filter(p => p.image);
     $('#resultCount').textContent=`${list.length} ${list.length===1?'opción':'opciones'}${query?' encontradas':' para elegir'}`;

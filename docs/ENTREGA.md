@@ -22,7 +22,7 @@ Versión Cloudflare: `65ca3f17-3033-47bb-ba3c-b005b4a493c0`. Las 85 comprobacion
 
 Actualización del 12 de septiembre: se retiran las etiquetas de origen de las fotos de la portada, las tarjetas y los detalles. Se conservan los avisos generales de demo y el registro documental de procedencia.
 
-25 imágenes nuevas generadas individualmente con ImageGen para los 23 cócteles y dos jarras de sangría. Acceso directo a Cócteles, tarjetas con fotografías, detalle y adición al pedido. Archivos WebP 480/960 px en `assets/cocktails/`; prompts en `docs/cocktail-prompts.json`.
+25 imágenes nuevas generadas individualmente con ImageGen para los 23 cócteles y dos jarras de sangría. La categoría Bebidas reúne al final de la barra la coctelería, las sangrías y el resto de bebidas, con fotografías, detalle y adición al pedido. Archivos WebP 480/960 px en `assets/cocktails/`; prompts en `docs/cocktail-prompts.json`.
 
 La reserva permite revisar, confirmar con referencia DEMO, consultar, modificar y cancelar durante la visita. Usa fecha/hora de Venezuela, rechaza horas pasadas y no almacena datos personales de forma persistente. Al recargar la página se reinicia. Sigue sin comprobar disponibilidad real ni enviar información al restaurante.
 

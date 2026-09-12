@@ -35,7 +35,7 @@ try {
     await screenshot(`home-${width}`);
     check(`No horizontal overflow at ${width}`,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
     check(`Visible disclosure at ${width}`,await page.locator('.demo-bar').isVisible());
-    for(const category of ['tapas','platos','postres','cocteles','bebidas']){
+    for(const category of ['tapas','platos','postres','bebidas']){
       await page.locator(`[data-filter="${category}"]`).click();
       await page.waitForLoadState('networkidle');
       check(`${category} filter at ${width}`,await page.locator('[data-add]').count()>0);

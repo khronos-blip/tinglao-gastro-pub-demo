@@ -11,6 +11,7 @@ const check=(n,v)=>{assert.ok(v,n);results.push(n);};
 page.on('pageerror',e=>errors.push(e.message));
 try{
  await page.goto(base);await page.evaluate(()=>document.fonts.ready);
+ check('Beverages is the single and final drinks category',await page.locator('[data-filter="cocteles"]').count()===0&&await page.locator('.chip').last().getAttribute('data-filter')==='bebidas');
  for(const width of [320,360,390,430,768]){
   await page.setViewportSize({width,height:844});await page.locator('[data-filter="tapas"]').click();
   const geometry=await page.evaluate(()=>({header:document.querySelector('.site-head').getBoundingClientRect().toJSON(),bar:document.querySelector('.category-wrap').getBoundingClientRect().toJSON(),width:document.documentElement.scrollWidth}));
@@ -24,8 +25,9 @@ try{
   if(width===390){await page.locator('#productGrid img').first().evaluate(el=>el.decode());await page.screenshot({path:`${out}/search-mobile.png`,animations:'disabled'});}
   await page.keyboard.press('Escape');check(`Escape restores filters at ${width}`,await page.locator('.categories').isVisible()&&await page.locator('#search').inputValue()===''&&await page.locator('#searchToggle').evaluate(n=>n===document.activeElement));
  }
- await page.setViewportSize({width:390,height:844});await page.locator('[data-filter="cocteles"]').click();
- check('All cocktail results remain accessible',await page.locator('[data-add]').count()===25);
+ await page.setViewportSize({width:390,height:844});await page.locator('[data-filter="bebidas"]').click();
+ check('Beverages contains the complete drinks menu',await page.locator('[data-add]').count()===60);
+ check('All cocktail and sangria photos remain accessible',await page.locator('#productGrid [data-add]').count()===25);
  await page.waitForLoadState('networkidle');
  for(const img of (await page.locator('#productGrid img').all()).slice(0,4))await img.evaluate(el=>el.decode());
  await page.screenshot({path:`${out}/catalog-mobile.png`,animations:'disabled'});
