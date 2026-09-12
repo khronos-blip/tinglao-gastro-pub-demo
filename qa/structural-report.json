@@ -1,0 +1,28 @@
+{
+  "html_validation": "pass (Python HTMLParser + browser DOM load)",
+  "node_check": "pass",
+  "local_refs": [
+    "favicon.svg",
+    "assets/fachada-tinglao.jpg",
+    "menu-oficial.pdf",
+    "assets/terraza-tinglao.jpg"
+  ],
+  "missing": [],
+  "external_dependencies": [],
+  "product_image_inventory": [
+    {
+      "id": "pulpo",
+      "name": "Pulpo a la gallega",
+      "price": 30.0,
+      "image": "assets/pulpo-gallega.jpg",
+      "exists": true
+    },
+    {
+      "id": "tarta",
+      "name": "Tarta Vasca",
+      "price": 14.0,
+      "image": "assets/tarta-vasca.jpg",
+      "exists": true
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "url": "http://127.0.0.1:4178",
+  "runAt": "2026-09-12T20:03:38.774Z",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 1000,
+      "overflow": true
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "overflow": true
+    }
+  },
+  "gates": {
+    "productCount": true,
+    "disclosure": true,
+    "search": true,
+    "filters": true,
+    "detail": true,
+    "twoItems": true,
+    "subtotal": true,
+    "persistence": true,
+    "deliveryNeedsAddress": true,
+    "orderPreview": true,
+    "orderConfirmation": true,
+    "reservationValidation": true,
+    "reservationPreview": true,
+    "reservationConfirmation": true,
+    "zeroConsoleErrors": true,
+    "zeroPageErrors": true,
+    "zeroFailedRequests": true,
+    "zeroOffOriginRequests": true,
+    "noOverflow": true,
+    "screenshots": true
+  },
+  "consoleErrors": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "offOriginRequests": [],
+  "screenshotCount": 12,
+  "status": "pass",
+  "failedGates": []
+}
