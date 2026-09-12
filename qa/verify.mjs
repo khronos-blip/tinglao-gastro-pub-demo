@@ -116,9 +116,9 @@ try {
   await page.locator('[data-filter="platos"]').click();await page.locator('.product-image[data-id="bacon-burger"]').click();
   check('Dish image has no origin label',await page.locator('#detailBody img').count()===1 && await page.locator('#detailBody figcaption').count()===0);await page.locator('#addDetail').click();
   await close();await page.locator('.product-image[data-id="chicken-burger"]').click();await page.locator('#addDetail').click();check('Decimal prices total correctly',(await page.locator('#subtotal').innerText()).includes('19,98'));await close();
-  await page.setViewportSize({width:390,height:844});await page.locator('.mobile-dock [data-open="reservation"]').click();await screenshot('reservation-mobile');
-  check('Mobile dialog fits viewport',await page.locator('#reservationModal').evaluate(n=>{const r=n.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth&&r.top>=30&&r.bottom<=innerHeight;}));await close();
-  await page.locator('.mobile-dock [data-open="cart"]').click();await page.locator('#checkoutBtn').click();await screenshot('checkout-mobile');check('Mobile cart no overflow',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await close();
+  await page.setViewportSize({width:390,height:844});await page.locator('.reserve-head').click();await screenshot('reservation-mobile');
+  check('Mobile dialog fits viewport',await page.locator('#reservationModal').evaluate(n=>{const r=n.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth&&r.top>=0&&r.bottom<=innerHeight;}));await close();
+  await page.locator('.site-head [data-open="cart"]').click();await page.locator('#checkoutBtn').click();await screenshot('checkout-mobile');check('Mobile cart no overflow',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await close();
   await page.emulateMedia({reducedMotion:'reduce'});check('Reduced motion respected',await page.locator('.btn').first().evaluate(n=>getComputedStyle(n).transitionDuration==='0s'));
   check('No browser or network errors',errors.length===0);
   check('No external requests or data submissions',requests.every(r=>new URL(r.url).origin===new URL(base).origin&&r.method==='GET'));

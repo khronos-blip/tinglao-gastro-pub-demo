@@ -50,7 +50,7 @@
   }
   function renderCart() {
     const items=entries();
-    $('#cartCount').textContent=count();$('#mobileCount').textContent=count();
+    $('#cartCount').textContent=count();
     $('.cart-btn').setAttribute('aria-label',`Abrir pedido, ${count()} artículos`);
     $('#subtotal').textContent=euro(subtotal());
     $('#cartItems').innerHTML=items.length ? items.map(p => `<div class="line-item">${p.image?`<img src="${p.thumbnail||p.image}" alt="">`:''}<div class="line-item-copy"><strong>${esc(p.name)}</strong><small>${esc(p.group)} · ${euro(p.price)}</small><div class="qty" aria-label="Cantidad de ${esc(p.name)}"><button data-qty="${p.id}" data-delta="-1" aria-label="Restar uno de ${esc(p.name)}">${icon('minus')}</button><span>${cart[p.id]}</span><button data-qty="${p.id}" data-delta="1" aria-label="Sumar uno de ${esc(p.name)}" ${cart[p.id]>=20?'disabled':''}>${icon('plus')}</button></div></div><strong>${euro(p.price*cart[p.id])}</strong></div>`).join('') : '<div class="empty"><strong>La mesa está por servir.</strong><br>Empieza añadiendo algo de la carta.<br><button class="btn btn-dark" data-close>Explorar la carta</button></div>';
@@ -60,7 +60,7 @@
     $('.drawer-foot').hidden=orderStage==='preview';
     $('#checkoutBtn').innerHTML=orderStage==='form'?`Revisar pedido ${icon('arrow-right')}`:'Continuar pedido';
   }
-  const background = () => $$('header, main, footer, .mobile-dock');
+  const background = () => $$('header, main, footer');
   function closeAll(restore=true) {
     $$('.modal,.drawer').forEach(el=>{el.classList.remove('open');el.setAttribute('aria-hidden','true');el.inert=true;});
     $('#overlay').classList.remove('open');document.body.style.overflow='';background().forEach(el=>el.inert=false);
@@ -167,6 +167,18 @@
     $('#editReservation').onclick=()=>{$('#reservationForm').hidden=false;$('#reservationPreview').innerHTML='';reservationSteps(1);$('#rDate').focus();};
     $('#confirmReservation').onclick=()=>confirm('reserva');$('#confirmReservation').focus();
   }
+  const compactNavigation=matchMedia('(max-width:850px)');
+  function setSearchOpen(open,{focus=true,clear=false}={}){
+    $('.category-wrap').classList.toggle('search-open',open);
+    $('#searchToggle').setAttribute('aria-expanded',String(open));
+    $('#searchToggle').setAttribute('aria-label',open?'Cerrar búsqueda':'Buscar en la carta');
+    $('#searchToggle use').setAttribute('href',open?'#icon-close':'#icon-search');
+    if(clear){$('#search').value='';renderProducts();}
+    if(focus)(open?$('#search'):$('#searchToggle')).focus({preventScroll:true});
+  }
+  $('#searchToggle').addEventListener('click',()=>setSearchOpen(!$('.category-wrap').classList.contains('search-open'),{clear:$('.category-wrap').classList.contains('search-open')}));
+  $('#search').addEventListener('keydown',e=>{if(e.key==='Escape'&&compactNavigation.matches){e.preventDefault();setSearchOpen(false,{clear:true});}});
+  compactNavigation.addEventListener('change',()=>setSearchOpen(compactNavigation.matches&&!!$('#search').value,{focus:false}));
   document.addEventListener('click',e=>{
     const d=e.target.closest('.detail-btn');if(d)detail(d.dataset.id,d);
     const o=e.target.closest('[data-open]');if(o){if(o.dataset.open==='cart')openEl($('#cartDrawer'),o);if(o.dataset.open==='reservation'){reservationView();openEl($('#reservationModal'),o);}}
@@ -174,8 +186,8 @@
     const q=e.target.closest('[data-qty]');if(q){readOrderState();const id=q.dataset.qty,delta=Number(q.dataset.delta);cart[id]=Math.max(0,Math.min(20,(cart[id]||0)+delta));if(!cart[id])delete cart[id];save();(document.querySelector(`[data-qty="${id}"][data-delta="${delta}"]:not(:disabled)`)||document.querySelector(`[data-qty="${id}"]:not(:disabled)`)||$('#cartDrawer [data-close]')).focus();}
     const quick=e.target.closest('[data-add]');if(quick)add(quick.dataset.add);
     const detailAdd=e.target.closest('#addDetail');if(detailAdd){const n=Number($('#detailQty').value);if(!Number.isInteger(n)||n<1||n>20){$('#detailError').textContent='Elige una cantidad entera entre 1 y 20.';$('#detailQty').focus();return;}add(detailAdd.dataset.id,n,true);}
-    const chip=e.target.closest('.chip');if(chip){$$('.chip').forEach(x=>{x.classList.toggle('active',x===chip);x.setAttribute('aria-pressed',String(x===chip));});filter=chip.dataset.filter;$('#search').value='';renderProducts();}
-    if(e.target.closest('#clearSearch')){$('#search').value='';$$('.chip')[0].click();$('#search').focus();}
+    const chip=e.target.closest('.chip');if(chip){$$('.chip').forEach(x=>{x.classList.toggle('active',x===chip);x.setAttribute('aria-pressed',String(x===chip));});filter=chip.dataset.filter;$('#search').value='';setSearchOpen(false,{focus:false});renderProducts();if(compactNavigation.matches){chip.scrollIntoView({block:'nearest',inline:'nearest'});$('.catalog-meta').scrollIntoView({block:'start',behavior:'instant'});}}
+    if(e.target.closest('#clearSearch')){$('#search').value='';$$('.chip')[0].click();if(compactNavigation.matches)$$('.chip')[0].focus({preventScroll:true});else $('#search').focus();}
   });
   document.addEventListener('keydown',e=>{
     if(!activeDialog)return;
@@ -188,7 +200,7 @@
     }
   });
   document.addEventListener('input',e=>{if(e.target.id==='detailQty'){const n=Number(e.target.value),id=$('#addDetail').dataset.id;$('#addDetail span').textContent=euro(byId[id].price*(Number.isInteger(n)&&n>0?n:1));}});
-  $('#search').addEventListener('input',renderProducts);
+  $('#search').addEventListener('input',()=>{renderProducts();if(compactNavigation.matches)$('.catalog-meta').scrollIntoView({block:'start',behavior:'instant'});});
   $('#checkoutBtn').addEventListener('click',()=>{if(orderStage==='form'&&$('#orderForm')){$('#orderForm').requestSubmit();return;}readOrderState();checkoutForm();$('#orderForm input')?.focus();});
   $('#reservationForm').addEventListener('submit',reservationSubmit);
   $('#rDate').min=localDate();reservationSteps(1);

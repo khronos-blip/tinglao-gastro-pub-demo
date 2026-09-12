@@ -27,3 +27,11 @@ Actualización del 12 de septiembre: se retiran las etiquetas de origen de las f
 La reserva permite revisar, confirmar con referencia DEMO, consultar, modificar y cancelar durante la visita. Usa fecha/hora de Venezuela, rechaza horas pasadas y no almacena datos personales de forma persistente. Al recargar la página se reinicia. Sigue sin comprobar disponibilidad real ni enviar información al restaurante.
 
 Versión Cloudflare: `665ff86f-de24-4ab0-947b-77cfff002ce9`. Pruebas completas de 101 comprobaciones en Chromium y WebKit; 10 pruebas específicas por motor para reservas. Verificación pública de 168 archivos/entradas/rutas. Evidencia en `qa/cocktails-reservations/`.
+
+## Navegación móvil compacta
+
+Cabecera de 62 px con Reservar y Mi pedido, sin acciones duplicadas en el borde inferior. El aviso inicial de demo se desplaza con la página y la cabecera mantiene el indicador DEMO. Categorías y buscador comparten una fila de 56 px; la lupa abre la búsqueda y el cierre o Escape devuelve los filtros. Elegir categoría o buscar coloca los resultados bajo los controles.
+
+En 390 × 844 px, el área ocupada por controles persistentes se reduce de 302 a 118 px: 184 px recuperados para la carta. Comprobaciones específicas en 320, 360, 390, 430 y 768 px: geometría, objetivos táctiles, buscador, foco y acciones de cabecera.
+
+Versión Cloudflare: `e26f5f3d-131c-409e-b514-c0030843c844`. La suite completa superó 101 comprobaciones por motor y la revisión específica de navegación, 46 por motor. Evidencia en `qa/compact-navigation/`.

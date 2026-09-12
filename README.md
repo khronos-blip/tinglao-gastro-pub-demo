@@ -8,14 +8,14 @@ Demo conceptual y no oficial para Tinglao Gastro Pub, Valencia (Venezuela). No e
 
 ## Experiencia
 
-- Dirección visual premium en verde nocturno, marfil y cobre. Cormorant Garamond y Manrope alojadas localmente, iconos SVG uniformes (sin emojis), portada editorial y carta fotográfica adaptable. Detalles inspirados en Liquid Glass: navegación y filtros translúcidos, controles con reflejos y barra flotante en móvil; fondos sólidos cuando se solicita más contraste o menos transparencia.
+- Dirección visual premium en verde nocturno, marfil y cobre. Cormorant Garamond y Manrope alojadas localmente, iconos SVG uniformes (sin emojis), portada editorial y carta fotográfica adaptable. Detalles inspirados en Liquid Glass: navegación y filtros translúcidos, controles con reflejos y filtros compactos en móvil; fondos sólidos cuando se solicita más contraste o menos transparencia.
 - Carta digital con **113 opciones en 22 secciones**, transcritas de las dos páginas de `menu-oficial.pdf`. Selección inicial de 12 platos, categorías y búsqueda global que ignora tildes.
 - Los importes están en EUR como en el PDF. Son precios de referencia del documento, sin afirmar vigencia o disponibilidad.
 - Los 53 platos tienen imagen: pulpo y tarta conservan sus fotografías originales; los 51 restantes usan 50 imágenes de IA creadas individualmente, compartiendo únicamente Chicken Burger entre carta y menú peques. Las fotos se presentan sin etiquetas de origen, a petición del usuario; la procedencia se conserva en `ASSET-NOTICE.md` y los registros de prompts. La coctelería incluye 25 imágenes adicionales para 23 cócteles y dos jarras de sangría. Las demás bebidas conservan su presentación textual. Las imágenes no atribuyen recetas ni ingredientes reales al restaurante.
 - Detalle de cada producto, adición directa, cantidades, subtotales y carrito persistente en el navegador.
 - Pedido simulado con retiro o entrega de ejemplo, dirección obligatoria en entrega, revisión, edición y confirmación local. La entrega no está verificada como servicio real.
 - Reserva demo completa con fechas y horas de Venezuela, validación de personas y teléfono, revisión, confirmación con referencia, consulta, modificación y cancelación. Se conserva en memoria durante la visita y se reinicia al recargar. No comprueba horarios, capacidad ni disponibilidad. El límite de 20 personas/unidades es únicamente una restricción de la demo.
-- Acceso rápido a pedido y reserva en móvil. Diálogos con foco contenido, devolución de foco, cierre con Escape y fondo inerte. Compatibilidad con movimiento reducido.
+- Cabecera móvil de 62 px con Reservar y Mi pedido; sin barra inferior duplicada. Categorías y buscador comparten una sola fila de 56 px: la lupa abre el campo y Escape/cierre restaura los filtros. El aviso inicial de demo se desplaza con la página; la marca mantiene el indicador DEMO en la cabecera. Diálogos con foco contenido, devolución de foco, cierre con Escape y fondo inerte. Compatibilidad con movimiento reducido.
 
 ## Límites de la demo
 

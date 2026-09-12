@@ -17,7 +17,7 @@ try{
   // It is September 13 in Tokyo and UTC, but still September 12 in Venezuela.
   await page.clock.install({time:new Date('2026-09-13T01:30:00Z')});
   await page.goto(base);
-  await page.locator('.mobile-dock [data-open="reservation"]').click();
+  await page.locator('.reserve-head').click();
   check('Minimum date follows Venezuela, not the visitor time zone',await page.locator('#rDate').getAttribute('min')==='2026-09-12');
   await page.locator('#rDate').fill('2026-09-12');await page.locator('#rTime').fill('20:00');
   await page.locator('#rPeople').fill('2');await page.locator('#rName').fill('<img src=x onerror=alert(1)>');await page.locator('#rPhone').fill('+58 400 000 0000');
@@ -28,16 +28,16 @@ try{
   await page.locator('#confirmReservation').click();
   check('Receipt safely renders a name as text',await page.locator('#confirmBody img').count()===0 && (await page.locator('#confirmBody').innerText()).includes('<img'));
   await page.screenshot({path:`${out}/receipt-mobile.png`,animations:'disabled'});
-  await page.keyboard.press('Escape');await page.locator('.mobile-dock [data-open="reservation"]').click();
+  await page.keyboard.press('Escape');await page.locator('.reserve-head').click();
   check('Closing and reopening retains the demo booking',await page.locator('#modifyReservation').isVisible());
   await page.locator('#modifyReservation').click();await page.locator('#rDate').fill('2026-09-13');await page.locator('#rTime').fill('00:15');await page.locator('#reservationForm button[type="submit"]').click();
   check('A next-day early time is accepted',await page.locator('#confirmReservation').isVisible());
   await page.locator('#confirmReservation').click();await page.locator('#viewReservation').click();
   await page.screenshot({path:`${out}/manage-mobile.png`,animations:'disabled'});
-  await page.locator('#cancelReservation').click();await page.keyboard.press('Escape');await page.locator('.mobile-dock [data-open="reservation"]').click();
+  await page.locator('#cancelReservation').click();await page.keyboard.press('Escape');await page.locator('.reserve-head').click();
   check('Cancellation remains visible after reopening',await page.locator('.reservation-status.cancelled').isVisible());
   check('Reservation details are not saved in browser storage',await page.evaluate(()=>!JSON.stringify({...localStorage,...sessionStorage}).includes('onerror')));
-  await page.reload();await page.locator('.mobile-dock [data-open="reservation"]').click();
+  await page.reload();await page.locator('.reserve-head').click();
   check('Reload resets the in-memory reservation',await page.locator('#rName').inputValue()==='' && await page.locator('#modifyReservation').count()===0);
   check('No browser errors',errors.length===0);
   await writeFile(`${out}/report.json`,JSON.stringify({status:'pass',browser:browserName,base,checks:results.length,results,errors},null,2));
