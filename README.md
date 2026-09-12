@@ -11,10 +11,10 @@ Demo conceptual y no oficial para Tinglao Gastro Pub, Valencia (Venezuela). No e
 - Dirección visual premium en verde nocturno, marfil y cobre. Cormorant Garamond y Manrope alojadas localmente, iconos SVG uniformes (sin emojis), portada editorial y carta fotográfica adaptable. Detalles inspirados en Liquid Glass: navegación y filtros translúcidos, controles con reflejos y barra flotante en móvil; fondos sólidos cuando se solicita más contraste o menos transparencia.
 - Carta digital con **113 opciones en 22 secciones**, transcritas de las dos páginas de `menu-oficial.pdf`. Selección inicial de 12 platos, categorías y búsqueda global que ignora tildes.
 - Los importes están en EUR como en el PDF. Son precios de referencia del documento, sin afirmar vigencia o disponibilidad.
-- Los 53 platos tienen imagen: pulpo y tarta conservan sus fotografías originales; los 51 restantes usan 50 imágenes de IA creadas individualmente, compartiendo únicamente Chicken Burger entre carta y menú peques. Se presentan como ilustrativas, sin atribuir recetas, ingredientes o emplatados al restaurante. Las bebidas conservan su presentación textual.
+- Los 53 platos tienen imagen: pulpo y tarta conservan sus fotografías originales; los 51 restantes usan 50 imágenes de IA creadas individualmente, compartiendo únicamente Chicken Burger entre carta y menú peques. Las fotos se presentan sin etiquetas de origen, a petición del usuario; la procedencia se conserva en `ASSET-NOTICE.md` y los registros de prompts. La coctelería incluye 25 imágenes adicionales para 23 cócteles y dos jarras de sangría. Las demás bebidas conservan su presentación textual. Las imágenes no atribuyen recetas ni ingredientes reales al restaurante.
 - Detalle de cada producto, adición directa, cantidades, subtotales y carrito persistente en el navegador.
 - Pedido simulado con retiro o entrega de ejemplo, dirección obligatoria en entrega, revisión, edición y confirmación local. La entrega no está verificada como servicio real.
-- Reserva simulada con validación de fecha, cantidad de personas y teléfono; revisión y edición antes de confirmar. No comprueba horarios, capacidad ni disponibilidad. El límite de 20 personas/unidades es únicamente una restricción de la demo.
+- Reserva demo completa con fechas y horas de Venezuela, validación de personas y teléfono, revisión, confirmación con referencia, consulta, modificación y cancelación. Se conserva en memoria durante la visita y se reinicia al recargar. No comprueba horarios, capacidad ni disponibilidad. El límite de 20 personas/unidades es únicamente una restricción de la demo.
 - Acceso rápido a pedido y reserva en móvil. Diálogos con foco contenido, devolución de foco, cierre con Escape y fondo inerte. Compatibilidad con movimiento reducido.
 
 ## Límites de la demo
@@ -32,9 +32,10 @@ Las marcas, fotografías y carta pertenecen a sus titulares. Consulta [ASSET-NOT
 - `index.html`: estructura, navegación y formularios.
 - `styles.css`: presentación adaptable y estados de la interfaz.
 - `menu.js`: transcripción de la carta y referencias de precios.
-- `media.js`: correspondencias de imágenes, versiones adaptadas y avisos de origen.
+- `media.js`: correspondencias de imágenes, versiones adaptadas y metadatos de origen.
 - `docs/image-prompts.json`: prompts y registro de las imágenes generadas con ImageGen.
-- `assets/dishes/`: imágenes WebP en 960 y 480 px.
+- `docs/cocktail-prompts.json`: registro de las 25 imágenes de coctelería.
+- `assets/dishes/` y `assets/cocktails/`: imágenes WebP en 960 y 480 px.
 - `assets/fonts/`: tipografías locales y licencias SIL OFL.
 - `wrangler.jsonc` y `scripts/prepare-deploy.mjs`: publicación estática del subdominio de Khronos.
 - `app.js`: catálogo, carrito, validación y simulaciones.
@@ -62,9 +63,11 @@ Usar únicamente la sesión autorizada de Cloudflare. El dominio personalizado c
 
 ## Verificación
 
-Esta revisión ha superado **85 comprobaciones en Chromium y 85 en WebKit** tanto en local como en https://tinglao.khronosonline.work/. La publicación también superó 118 verificaciones de archivos, entradas con parámetros y página inexistente. Incluye fotografías completas, iconos y tipografías locales. Cubre: 390, 768, 1024 y 1440 px, categorías, búsqueda, detalle, dos productos, cantidades, decimales, persistencia y recuperación de almacenamiento corrupto, retiro/entrega, edición de revisiones, validación de reservas, confirmaciones, teclado y movimiento reducido. Sin desbordamiento horizontal, errores de navegador, solicitudes externas ni envío de datos.
+La revisión de coctelería y reservas ha superado **101 comprobaciones en Chromium y 101 en WebKit**, más 10 pruebas específicas de reservas en cada motor. La publicación ha superado 168 verificaciones de archivos, entradas con parámetros y página inexistente. Incluye fotografías completas, iconos y tipografías locales. Cubre: 390, 768, 1024 y 1440 px, categorías, búsqueda, detalle, dos productos, cantidades, decimales, persistencia y recuperación de almacenamiento corrupto, retiro/entrega, edición de revisiones, validación de reservas, confirmaciones, teclado y movimiento reducido. Sin desbordamiento horizontal, errores de navegador, solicitudes externas ni envío de datos.
 
-La evidencia `qa/redesign/` corresponde al primer rediseño; `qa/qa-report.json` y `qa/screenshots/` corresponden a la versión inicial. La nueva revisión utiliza `qa/premium/` para la validación local y los informes `qa/premium/live-*.json` para el subdominio publicado.
+La revisión de coctelería y reservas incorpora `qa/reservations.mjs`: comprueba el cambio de fecha entre Venezuela y otros países, horas pasadas, comprobantes, modificación, cancelación, texto seguro y reinicio de la sesión. La reserva demo no se guarda en almacenamiento persistente.
+
+La evidencia `qa/redesign/` corresponde al primer rediseño; `qa/qa-report.json` y `qa/screenshots/` corresponden a la versión inicial. `qa/premium/` y `qa/liquid-glass/` conservan las revisiones anteriores. La actualización de coctelería y reservas se documenta en `qa/cocktails-reservations/`.
 
 Para repetir las pruebas con una instalación existente de Playwright (solo herramienta de QA, no dependencia de la web):
 

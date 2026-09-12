@@ -20,7 +20,9 @@ async function screenshot(name){await page.screenshot({path:`${out}/${name}.png`
 try {
   await page.goto(base);await page.waitForSelector('.product-card');
   await page.evaluate(()=>document.fonts.ready);
-  check('All 53 dishes have images with appropriate origin labels',await page.evaluate(()=>{const meals=window.TINGLAO_MENU.filter(g=>g.category!=='bebidas').flatMap(g=>g.items);return meals.length===53&&meals.every(([id])=>['pulpo','tarta'].includes(id)||window.TINGLAO_MEDIA[id]?.generated===true);}));
+  check('All 53 dishes have images',await page.evaluate(()=>{const meals=window.TINGLAO_MENU.filter(g=>g.category!=='bebidas').flatMap(g=>g.items);return meals.length===53&&meals.every(([id])=>['pulpo','tarta'].includes(id)||window.TINGLAO_MEDIA[id]?.generated===true);}));
+  check('All 25 cocktails and sangria pitchers have images',await page.evaluate(()=>{const drinks=window.TINGLAO_MENU.filter(g=>['Coctelería de autor','Coctelería clásica','Jarras de sangría'].includes(g.name)).flatMap(g=>g.items);return drinks.length===25&&drinks.every(([id])=>window.TINGLAO_MEDIA[id]?.image.startsWith('assets/cocktails/'));}));
+  check('No image origin badges in the interface',await page.locator('.photo-origin,#heroPhotoSource,.imagery-note').count()===0);
   check('No emoji icons in visible interface',await page.evaluate(()=>!(/\p{Extended_Pictographic}/u).test(document.body.innerText)));
   check('Self-hosted editorial fonts loaded',await page.evaluate(()=>document.fonts.check('400 20px "Cormorant Garamond"')&&document.fonts.check('400 14px "Manrope"')));
   check('113 products, unique IDs and valid prices',await page.evaluate(()=>{const p=window.TINGLAO_MENU.flatMap(g=>g.items);return p.length===113&&new Set(p.map(p=>p[0])).size===113&&p.every(p=>Number.isFinite(p[2])&&p[2]>0);}));
@@ -33,7 +35,7 @@ try {
     await screenshot(`home-${width}`);
     check(`No horizontal overflow at ${width}`,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
     check(`Visible disclosure at ${width}`,await page.locator('.demo-bar').isVisible());
-    for(const category of ['tapas','platos','postres','bebidas']){
+    for(const category of ['tapas','platos','postres','cocteles','bebidas']){
       await page.locator(`[data-filter="${category}"]`).click();
       await page.waitForLoadState('networkidle');
       check(`${category} filter at ${width}`,await page.locator('[data-add]').count()>0);
@@ -90,6 +92,17 @@ try {
   await page.locator('#editReservation').click();check('Reservation edit preserves data',await page.locator('#rName').inputValue()==='Persona de prueba');
   await page.locator('#rPeople').fill('3');await page.locator('#reservationForm button[type="submit"]').click();await page.locator('#confirmReservation').click();
   check('Reservation confirmation explicitly simulated',(await page.locator('#confirmBody').innerText()).includes('No se ha reservado ninguna mesa'));
+  check('Reservation receipt has a demo reference',/^DEMO-[A-F0-9]{8}$/.test(await page.locator('#confirmBody .receipt-top strong').innerText()));
+  const reference=await page.locator('#confirmBody .receipt-top strong').innerText();
+  await page.locator('#viewReservation').click();
+  check('Reservation can be managed after confirmation',await page.locator('#modifyReservation').isVisible());
+  await page.locator('#modifyReservation').click();
+  check('Confirmed reservation data is editable',await page.locator('#rPeople').inputValue()==='3');
+  await page.locator('#rPeople').fill('5');await page.locator('#reservationForm button[type="submit"]').click();await page.locator('#confirmReservation').click();
+  check('Modifying retains reference and updates receipt',await page.locator('#confirmBody .receipt-top strong').innerText()===reference && (await page.locator('#confirmBody dl').innerText()).includes('5'));
+  await page.locator('#viewReservation').click();await page.locator('#cancelReservation').click();
+  check('Demo reservation can be cancelled',await page.locator('.reservation-status.cancelled').innerText()==='Cancelada · demo');
+  await page.locator('#newReservation').click();check('New reservation starts with empty details',await page.locator('#rName').inputValue()==='');
   await close();check('Escape restores focus to trigger',await page.locator('.reserve-head').evaluate(n=>n===document.activeElement));
   await page.locator('.reserve-head').click();
   check('Underlying page inert during modal',await page.locator('main').evaluate(n=>n.inert));
@@ -101,7 +114,7 @@ try {
   check('Stored quantities capped and unknown keys removed',await page.locator('#cartCount').innerText()==='20');
   await page.evaluate(()=>localStorage.removeItem('tinglao-demo-cart'));await page.reload();
   await page.locator('[data-filter="platos"]').click();await page.locator('.product-image[data-id="bacon-burger"]').click();
-  check('Generated dish photo is explicitly illustrative',await page.locator('#detailBody img').count()===1 && (await page.locator('#detailBody figcaption').innerText()).includes('generada con IA'));await page.locator('#addDetail').click();
+  check('Dish image has no origin label',await page.locator('#detailBody img').count()===1 && await page.locator('#detailBody figcaption').count()===0);await page.locator('#addDetail').click();
   await close();await page.locator('.product-image[data-id="chicken-burger"]').click();await page.locator('#addDetail').click();check('Decimal prices total correctly',(await page.locator('#subtotal').innerText()).includes('19,98'));await close();
   await page.setViewportSize({width:390,height:844});await page.locator('.mobile-dock [data-open="reservation"]').click();await screenshot('reservation-mobile');
   check('Mobile dialog fits viewport',await page.locator('#reservationModal').evaluate(n=>{const r=n.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth&&r.top>=30&&r.bottom<=innerHeight;}));await close();

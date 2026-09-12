@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "browser": "chromium",
+  "base": "http://127.0.0.1:4187/",
+  "checks": 10,
+  "results": [
+    "Minimum date follows Venezuela, not the visitor time zone",
+    "A past time today is rejected in Venezuela",
+    "A later time today is accepted",
+    "Receipt safely renders a name as text",
+    "Closing and reopening retains the demo booking",
+    "A next-day early time is accepted",
+    "Cancellation remains visible after reopening",
+    "Reservation details are not saved in browser storage",
+    "Reload resets the in-memory reservation",
+    "No browser errors"
+  ],
+  "errors": []
+}

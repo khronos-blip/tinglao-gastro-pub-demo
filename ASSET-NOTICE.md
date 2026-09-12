@@ -8,9 +8,9 @@ Se conservan las imágenes originales en `assets/pulpo-gallega.jpg`, `assets/tar
 
 ## Imágenes ilustrativas
 
-Las imágenes de `assets/dishes/` se han generado con IA, a petición del usuario, únicamente para esta presentación conceptual. No son fotografías del restaurante ni garantizan ingredientes, recetas, cantidades o presentación real. Se señalan como ilustrativas en la carta y en el detalle de cada plato. Los nombres y precios proceden del PDF original; las imágenes no amplían esas afirmaciones comerciales.
+Las imágenes de `assets/dishes/` y `assets/cocktails/` se han generado con IA, a petición del usuario, únicamente para esta presentación conceptual. No son fotografías del restaurante ni garantizan ingredientes, recetas, cantidades o presentación real. Por solicitud del usuario, las fotos se presentan sin etiquetas superpuestas; este documento conserva la información de origen. Los nombres y precios proceden del PDF original; las imágenes no amplían esas afirmaciones comerciales.
 
-El registro de herramientas, prompts y archivos se conserva en `docs/image-prompts.json`.
+El registro de herramientas, prompts y archivos se conserva en `docs/image-prompts.json` y `docs/cocktail-prompts.json`.
 
 ## Tipografía
 

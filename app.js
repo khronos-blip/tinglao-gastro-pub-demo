@@ -7,11 +7,13 @@
   const euro = n => new Intl.NumberFormat('es-ES', {style:'currency',currency:'EUR'}).format(n);
   const normalized = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
   const groups = window.TINGLAO_MENU;
-  const photos = {...window.TINGLAO_MEDIA,pulpo:{image:'assets/pulpo-gallega.jpg',alt:'Pulpo a la gallega fotografiado por Tinglao',caption:'El momento de compartir.'},tarta:{image:'assets/tarta-vasca.jpg',alt:'Tarta vasca fotografiada por Tinglao',caption:'Siempre hay sitio para el postre.'}};
+  const photos = {...window.TINGLAO_MEDIA,pulpo:{image:'assets/pulpo-gallega.jpg',alt:'Pulpo a la gallega',caption:'El momento de compartir.'},tarta:{image:'assets/tarta-vasca.jpg',alt:'Tarta vasca',caption:'Siempre hay sitio para el postre.'}};
   const products = groups.flatMap(g => g.items.map(([id,name,price]) => ({id,name,price,category:g.category,group:g.name,note:g.note||'',...photos[id]})));
   const byId = Object.fromEntries(products.map(p => [p.id,p]));
   const selection = ['pulpo','croquetas','camarones','fideua','bacon-burger','carpaccio','calamares','solomillo','arroz-negro','bravas','tarta','crema-catalana'];
+  const cocktailGroups = ['Coctelería de autor','Coctelería clásica','Jarras de sangría'];
   const cartKey = 'tinglao-demo-cart';
+  let reservation = null, reservationDraft = null;
   let filter = 'seleccion', cart = {}, activeDialog = null, returnFocus = null, toastTimer;
   let orderState = {mode:'Retiro',address:'',notes:'',terms:false};
   let orderStage = 'cart';
@@ -34,11 +36,11 @@
   }
   function renderProducts() {
     const query=normalized($('#search').value);
-    const list=products.filter(p => query ? normalized(p.name+' '+p.group).includes(query) : filter==='seleccion' ? selection.includes(p.id) : p.category===filter);
+    const list=products.filter(p => query ? normalized(p.name+' '+p.group).includes(query) : filter==='seleccion' ? selection.includes(p.id) : filter==='cocteles' ? cocktailGroups.includes(p.group) : p.category===filter);
     if(!query && filter==='seleccion')list.sort((a,b)=>selection.indexOf(a.id)-selection.indexOf(b.id));
     const featured=list.filter(p => p.image);
     $('#resultCount').textContent=`${list.length} ${list.length===1?'opción':'opciones'}${query?' encontradas':' para elegir'}`;
-    $('#productGrid').innerHTML=featured.map(p => `<article class="product-card" data-id="${p.id}"><button class="product-image detail-btn" data-id="${p.id}" aria-label="Ver detalle de ${esc(p.name)}"><img src="${p.image}" ${p.thumbnail?`srcset="${p.thumbnail} 480w, ${p.image} 960w" sizes="(max-width: 680px) 45vw, (max-width: 1150px) 29vw, 23vw"`:''} alt="${esc(p.alt)}" width="960" height="960" loading="lazy" decoding="async"><span class="photo-origin">${p.generated?'Ilustrativa · IA':'Fotografía original'}</span></button><div class="product-body"><span class="tag">${esc(p.group)}</span><h3><button class="detail-link detail-btn" data-id="${p.id}">${esc(p.name)}</button></h3><div class="product-foot"><span class="price">${euro(p.price)}</span><button class="add-btn" data-add="${p.id}" aria-label="Añadir ${esc(p.name)}">${icon('plus')}</button></div></div></article>`).join('');
+    $('#productGrid').innerHTML=featured.map(p => `<article class="product-card" data-id="${p.id}"><button class="product-image detail-btn" data-id="${p.id}" aria-label="Ver detalle de ${esc(p.name)}"><img src="${p.image}" ${p.thumbnail?`srcset="${p.thumbnail} 480w, ${p.image} 960w" sizes="(max-width: 680px) 45vw, (max-width: 1150px) 29vw, 23vw"`:''} alt="${esc(p.alt)}" width="960" height="960" loading="lazy" decoding="async"></button><div class="product-body"><span class="tag">${esc(p.group)}</span><h3><button class="detail-link detail-btn" data-id="${p.id}">${esc(p.name)}</button></h3><div class="product-foot"><span class="price">${euro(p.price)}</span><button class="add-btn" data-add="${p.id}" aria-label="Añadir ${esc(p.name)}">${icon('plus')}</button></div></div></article>`).join('');
     $('#productGrid').hidden=!featured.length;
     const displayGroups = !query && filter==='seleccion' ? [{name:'Para seguir disfrutando',selection:true}] : groups;
     $('#menuGroups').innerHTML=list.length ? displayGroups.map(g => {
@@ -73,7 +75,7 @@
   }
   function detail(id,trigger) {
     const p=byId[id];if(!p)return;
-    $('#detailBody').innerHTML=`<div class="detail-grid ${p.image?'':'no-photo'}">${p.image?`<figure class="detail-image-wrap"><img src="${p.image}" alt="${esc(p.alt)}"><figcaption>${p.generated?'Imagen generada con IA para esta demo. Es ilustrativa y no reproduce la receta ni presentación real del restaurante.':'Fotografía original de Tinglao.'}</figcaption></figure>`:''}<div class="detail-copy"><span class="tag">${esc(p.group)}</span><h3 id="detailTitle">${esc(p.name)}</h3><p class="price">${euro(p.price)}</p>${p.note?`<p>${esc(p.note)}</p>`:''}<p>Precio de referencia de la carta oficial. Consulta ingredientes, alérgenos y disponibilidad con el restaurante antes de un pedido real.</p><div class="field"><label for="detailQty">Cantidad · máximo 20 por artículo en esta demo</label><input id="detailQty" type="number" min="1" max="20" step="1" value="1" inputmode="numeric"></div><div class="error" id="detailError" role="alert"></div><button class="btn btn-dark" id="addDetail" data-id="${p.id}">Añadir al pedido <span>${euro(p.price)}</span></button></div></div>`;
+    $('#detailBody').innerHTML=`<div class="detail-grid ${p.image?'':'no-photo'}">${p.image?`<figure class="detail-image-wrap"><img src="${p.image}" alt="${esc(p.alt)}"></figure>`:''}<div class="detail-copy"><span class="tag">${esc(p.group)}</span><h3 id="detailTitle">${esc(p.name)}</h3><p class="price">${euro(p.price)}</p>${p.note?`<p>${esc(p.note)}</p>`:''}<p>Precio de referencia de la carta oficial. Consulta ingredientes, alérgenos y disponibilidad con el restaurante antes de un pedido real.</p><div class="field"><label for="detailQty">Cantidad · máximo 20 por artículo en esta demo</label><input id="detailQty" type="number" min="1" max="20" step="1" value="1" inputmode="numeric"></div><div class="error" id="detailError" role="alert"></div><button class="btn btn-dark" id="addDetail" data-id="${p.id}">Añadir al pedido <span>${euro(p.price)}</span></button></div></div>`;
     openEl($('#detailModal'),trigger);
   }
   function add(id,n=1,open=false) {
@@ -107,34 +109,67 @@
     $('#confirmOrder').onclick=()=>confirm('pedido');$('#confirmOrder').focus();
   }
   function confirm(type) {
-    const isOrder=type==='pedido';
-    if(isOrder){orderStage='cart';cart={};orderState={mode:'Retiro',address:'',notes:'',terms:false};save();}
-    else{$('#reservationForm').reset();$('#reservationForm').hidden=false;$('#reservationPreview').innerHTML='';}
-    $('#confirmBody').innerHTML=`<div class="success"><div class="success-mark" aria-hidden="true">${icon('check')}</div><span class="eyebrow">ASÍ SERÍA LA EXPERIENCIA</span><h3>${isOrder?'Pedido simulado':'Reserva simulada'}</h3><p>Has completado la prueba. ${isOrder?'El restaurante no ha recibido ningún pedido.':'No se ha reservado ninguna mesa.'} No se ha enviado información ni realizado ningún pago.</p><button class="btn btn-dark" data-close>Volver a la carta ${icon('arrow-right')}</button></div>`;
+    if(type==='reserva'){
+      reservation={...reservationDraft,reference:reservation?.reference||`DEMO-${crypto.randomUUID().slice(0,8).toUpperCase()}`,status:'confirmed'};
+      reservationDraft=null;
+      $('#reservationForm').reset();$('#reservationForm').hidden=false;$('#reservationPreview').innerHTML='';
+      $('#confirmBody').innerHTML=`<div class="success"><div class="success-mark" aria-hidden="true">${icon('check')}</div><span class="eyebrow">DEMOSTRACIÓN COMPLETADA</span><h3>Reserva demo confirmada</h3><p>Este es tu comprobante de prueba. No se ha reservado ninguna mesa ni enviado información al restaurante.</p>${reservationReceipt(reservation)}<button class="btn btn-dark" id="viewReservation">Ver mi reserva demo ${icon('arrow-right')}</button></div>`;
+      $('#viewReservation').onclick=()=>{reservationView();openEl($('#reservationModal'));};
+    }else{
+      orderStage='cart';cart={};orderState={mode:'Retiro',address:'',notes:'',terms:false};save();
+      $('#confirmBody').innerHTML=`<div class="success"><div class="success-mark" aria-hidden="true">${icon('check')}</div><span class="eyebrow">ASÍ SERÍA LA EXPERIENCIA</span><h3>Pedido simulado</h3><p>Has completado la prueba. El restaurante no ha recibido ningún pedido. No se ha enviado información ni realizado ningún pago.</p><button class="btn btn-dark" data-close>Volver a la carta ${icon('arrow-right')}</button></div>`;
+    }
     openEl($('#confirmModal'));
   }
-  function localDate() {const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;}
+  function venezuelaNow(){
+    const parts=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:'America/Caracas',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).map(p=>[p.type,p.value]));
+    return {date:`${parts.year}-${parts.month}-${parts.day}`,time:`${parts.hour}:${parts.minute}`};
+  }
+  function localDate(){return venezuelaNow().date;}
+  function reservationSteps(step){
+    $('#reservationSteps').innerHTML=['Tus datos','Revisión','Tu reserva'].map((name,i)=>`<li ${i+1===step?'aria-current="step"':''} class="${i+1<=step?'reached':''}"><span>${i+1}</span>${name}</li>`).join('');
+  }
+  function reservationReceipt(r){
+    return `<div class="reservation-receipt"><div class="receipt-top"><span>Referencia de prueba</span><strong>${esc(r.reference)}</strong></div><dl><div><dt>Fecha</dt><dd>${esc(r.date.split('-').reverse().join('/'))}</dd></div><div><dt>Hora · Venezuela</dt><dd>${esc(r.time)}</dd></div><div><dt>Personas</dt><dd>${r.people}</dd></div><div><dt>A nombre de</dt><dd>${esc(r.name)}</dd></div></dl><span class="reservation-status ${r.status==='cancelled'?'cancelled':''}">${r.status==='cancelled'?'Cancelada · demo':'Confirmada · demo'}</span></div>`;
+  }
+  function reservationForm(record=null){
+    $('#reservationForm').reset();
+    if(record)for(const [key,value] of Object.entries(record)){const field=$('#reservationForm').elements.namedItem(key);if(field)field.value=value;}
+    $('#rDate').min=localDate();$('#reservationError').textContent='';
+    $$('#reservationForm [aria-invalid]').forEach(f=>f.removeAttribute('aria-invalid'));
+    $('#reservationForm').hidden=false;$('#reservationPreview').innerHTML='';reservationSteps(1);
+  }
+  function reservationView(){
+    if(!reservation){reservationForm();return;}
+    reservationSteps(3);$('#reservationForm').hidden=true;
+    $('#reservationPreview').innerHTML=`<h3>Tu reserva de demostración.</h3>${reservationReceipt(reservation)}<p class="reservation-session-note">Disponible durante esta visita. Al recargar la página, la prueba se reinicia.</p><div class="form-actions">${reservation.status==='confirmed'?'<button class="btn btn-outline" id="modifyReservation">Modificar</button><button class="btn btn-outline" id="cancelReservation">Cancelar reserva demo</button>':'<button class="btn btn-dark" id="newReservation">Probar otra reserva</button>'}</div>`;
+    const modify=$('#modifyReservation');if(modify)modify.onclick=()=>{reservationForm(reservation);$('#rDate').focus();};
+    const cancel=$('#cancelReservation');if(cancel)cancel.onclick=()=>{reservation.status='cancelled';reservationView();$('#newReservation').focus();toast('Reserva demo cancelada');};
+    const fresh=$('#newReservation');if(fresh)fresh.onclick=()=>{reservation=null;reservationDraft=null;reservationForm();$('#rDate').focus();};
+  }
   function reservationSubmit(e) {
     e.preventDefault();const fd=new FormData(e.currentTarget);let err='',invalid;
     const required=['date','time','people','name','phone'];
     const fields={date:$('#rDate'),time:$('#rTime'),people:$('#rPeople'),name:$('#rName'),phone:$('#rPhone')};
     Object.values(fields).forEach(f=>f.removeAttribute('aria-invalid'));
-    const missing=required.find(k=>!String(fd.get(k)||'').trim());
+    const missing=required.find(k=>!String(fd.get(k)||'').trim());const now=venezuelaNow();
     if(missing){err='Completa todos los campos obligatorios.';invalid=fields[missing];}
-    else if(String(fd.get('date'))<localDate()){err='Elige una fecha de hoy en adelante.';invalid=fields.date;}
+    else if(String(fd.get('date'))<now.date){err='Elige una fecha de hoy en adelante.';invalid=fields.date;}
+    else if(String(fd.get('date'))===now.date&&String(fd.get('time'))<=now.time){err='Elige una hora futura de Venezuela para esta prueba.';invalid=fields.time;}
     else if(!Number.isInteger(Number(fd.get('people')))||Number(fd.get('people'))<1||Number(fd.get('people'))>20){err='Indica entre 1 y 20 personas para esta simulación.';invalid=fields.people;}
     else if(!/^[+()\d\s.-]{7,25}$/.test(String(fd.get('phone')).trim())||String(fd.get('phone')).replace(/\D/g,'').length<7){err='Introduce un teléfono de ejemplo válido, con al menos 7 dígitos.';invalid=fields.phone;}
     else if(!fields.date.validity.valid||!fields.time.validity.valid){err='Revisa la fecha y la hora.';invalid=!fields.date.validity.valid?fields.date:fields.time;}
     $('#reservationError').textContent=err;if(err){invalid.setAttribute('aria-invalid','true');invalid.focus();return;}
-    const message=`RESERVA DE PRUEBA · NO ENVIADA\n\nFecha: ${String(fd.get('date')).split('-').reverse().join('/')}\nHora: ${fd.get('time')}\nPersonas: ${fd.get('people')}\nNombre: ${String(fd.get('name')).trim()}\nTeléfono: ${String(fd.get('phone')).trim()}${String(fd.get('notes')).trim()?'\nNotas: '+String(fd.get('notes')).trim():''}`;
-    $('#reservationForm').hidden=true;
-    $('#reservationPreview').innerHTML=`<p class="form-step">02 / REVISA TU RESERVA</p><h3>Tu próximo encuentro.</h3><div class="notice">La fecha y la hora son de ejemplo. No se comprueba disponibilidad ni se reserva una mesa.</div><div class="preview">${esc(message)}</div><div class="form-actions"><button class="btn btn-outline" id="editReservation">Editar reserva</button><button class="btn btn-dark" id="confirmReservation">Confirmar simulación</button></div>`;
-    $('#editReservation').onclick=()=>{$('#reservationForm').hidden=false;$('#reservationPreview').innerHTML='';$('#rDate').focus();};
+    reservationDraft=Object.fromEntries([...fd.entries()].map(([key,value])=>[key,String(value).trim()]));reservationDraft.people=Number(reservationDraft.people);
+    const message=`Fecha: ${reservationDraft.date.split('-').reverse().join('/')}\nHora: ${reservationDraft.time} · Venezuela\nPersonas: ${reservationDraft.people}\nNombre: ${reservationDraft.name}\nTeléfono: ${reservationDraft.phone}${reservationDraft.notes?'\nNotas: '+reservationDraft.notes:''}`;
+    reservationSteps(2);$('#reservationForm').hidden=true;
+    $('#reservationPreview').innerHTML=`<h3>Tu próximo encuentro.</h3><div class="notice">Revisa tus datos de ejemplo y confirma la demostración.</div><div class="preview">${esc(message)}</div><div class="form-actions"><button class="btn btn-outline" id="editReservation">Editar reserva</button><button class="btn btn-dark" id="confirmReservation">Confirmar reserva demo</button></div>`;
+    $('#editReservation').onclick=()=>{$('#reservationForm').hidden=false;$('#reservationPreview').innerHTML='';reservationSteps(1);$('#rDate').focus();};
     $('#confirmReservation').onclick=()=>confirm('reserva');$('#confirmReservation').focus();
   }
   document.addEventListener('click',e=>{
     const d=e.target.closest('.detail-btn');if(d)detail(d.dataset.id,d);
-    const o=e.target.closest('[data-open]');if(o){if(o.dataset.open==='cart')openEl($('#cartDrawer'),o);if(o.dataset.open==='reservation'){$('#rDate').min=localDate();openEl($('#reservationModal'),o);}}
+    const o=e.target.closest('[data-open]');if(o){if(o.dataset.open==='cart')openEl($('#cartDrawer'),o);if(o.dataset.open==='reservation'){reservationView();openEl($('#reservationModal'),o);}}
     if(e.target.closest('[data-close]'))closeAll();
     const q=e.target.closest('[data-qty]');if(q){readOrderState();const id=q.dataset.qty,delta=Number(q.dataset.delta);cart[id]=Math.max(0,Math.min(20,(cart[id]||0)+delta));if(!cart[id])delete cart[id];save();(document.querySelector(`[data-qty="${id}"][data-delta="${delta}"]:not(:disabled)`)||document.querySelector(`[data-qty="${id}"]:not(:disabled)`)||$('#cartDrawer [data-close]')).focus();}
     const quick=e.target.closest('[data-add]');if(quick)add(quick.dataset.add);
@@ -156,10 +191,10 @@
   $('#search').addEventListener('input',renderProducts);
   $('#checkoutBtn').addEventListener('click',()=>{if(orderStage==='form'&&$('#orderForm')){$('#orderForm').requestSubmit();return;}readOrderState();checkoutForm();$('#orderForm input')?.focus();});
   $('#reservationForm').addEventListener('submit',reservationSubmit);
-  $('#rDate').min=localDate();
+  $('#rDate').min=localDate();reservationSteps(1);
   $$('.modal,.drawer').forEach(el=>el.inert=true);
   $('#cartDrawer').setAttribute('role','dialog');$('#cartDrawer').setAttribute('aria-modal','true');
   const heroPhoto=photos.fideua;
-  if(heroPhoto){$('#heroDish').src=heroPhoto.image;$('#heroDish').alt=heroPhoto.alt;$('#heroPhotoSource').textContent='IMAGEN ILUSTRATIVA · IA';$('#heroPhotoName').textContent='Fideuá';}
+  if(heroPhoto){$('#heroDish').src=heroPhoto.image;$('#heroDish').alt=heroPhoto.alt;$('#heroPhotoName').textContent='Fideuá';}
   renderProducts();renderCart();
 })();

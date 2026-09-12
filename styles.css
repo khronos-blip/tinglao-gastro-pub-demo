@@ -121,3 +121,25 @@
   .photo-origin{background:var(--paper)}
   .category-wrap,.mobile-dock,.modal,.drawer{border-color:#829575}
 }
+
+/* Reservation demo: review, receipt and management within the current visit. */
+.catalog-meta{padding-bottom:22px}
+.reservation-steps{list-style:none;display:flex;gap:14px;justify-content:space-between;padding:0;margin:0 0 22px}
+.reservation-steps li{display:flex;align-items:center;gap:8px;font-size:10px;color:var(--muted)}
+.reservation-steps li>span{display:grid;place-items:center;width:25px;height:25px;border:1px solid var(--line);border-radius:50%;font-size:10px}
+.reservation-steps .reached>span{background:var(--green);border-color:var(--green);color:var(--cream);box-shadow:inset 0 1px 0 #ffffff55}
+.reservation-steps [aria-current]{color:var(--green);font-weight:600}
+.reservation-receipt{margin:22px 0;padding:21px;border:1px solid #bac8b0;border-radius:20px;background:linear-gradient(145deg,#ffffffa6,#eaf0e18c);text-align:left;box-shadow:inset 0 1px 0 #ffffff}
+.receipt-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:16px;border-bottom:1px dashed #b9c7ac}
+.receipt-top>span{font-size:10px;color:var(--muted)}
+.receipt-top>strong{font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--green)}
+.reservation-receipt dl{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:19px 0}
+.reservation-receipt dt{font-size:10px;color:var(--muted);margin-bottom:4px}
+.reservation-receipt dd{font-size:14px;font-weight:500;color:var(--green);margin:0;overflow-wrap:anywhere}
+.reservation-status{display:inline-block;padding:6px 12px;border-radius:999px;font-size:10px;background:#dce8d4;color:#244d33}
+.reservation-status.cancelled{background:#eee0d4;color:#71472f}
+.reservation-session-note{font-size:10px;color:var(--muted);line-height:1.7;margin-bottom:22px}
+@media(max-width:680px){.reservation-steps{gap:8px}.reservation-steps li{font-size:9px;gap:6px}.reservation-receipt{padding:17px}.receipt-top{gap:8px}.receipt-top>strong{font-size:10px}.reservation-receipt dd{font-size:13px}.category-wrap .chip{padding:10px 12px}}
+.modal{display:flex;flex-direction:column}
+.modal-head{flex-shrink:0}
+.modal-body{min-height:0;max-height:none;flex:1}

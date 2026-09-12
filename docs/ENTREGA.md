@@ -17,3 +17,13 @@ Reservas y pedidos son simulados; no se envían datos ni se procesan pagos. Los 
 Actualización del 12 de septiembre: controles con bordes luminosos y reflejos suaves, navegación/filtros translúcidos, barra flotante en móvil y formularios con acabado de cristal. Inspiración: https://developer.apple.com/design/human-interface-guidelines/materials. Implementación CSS, con fondos sólidos de respaldo y adaptación a las preferencias de contraste/transparencia.
 
 Versión Cloudflare: `65ca3f17-3033-47bb-ba3c-b005b4a493c0`. Las 85 comprobaciones existentes pasaron en Chromium y WebKit. Se revisaron además los anchos 320 y 360 px. Evidencia en `qa/liquid-glass/`.
+
+## Coctelería y reserva demo completa
+
+Actualización del 12 de septiembre: se retiran las etiquetas de origen de las fotos de la portada, las tarjetas y los detalles. Se conservan los avisos generales de demo y el registro documental de procedencia.
+
+25 imágenes nuevas generadas individualmente con ImageGen para los 23 cócteles y dos jarras de sangría. Acceso directo a Cócteles, tarjetas con fotografías, detalle y adición al pedido. Archivos WebP 480/960 px en `assets/cocktails/`; prompts en `docs/cocktail-prompts.json`.
+
+La reserva permite revisar, confirmar con referencia DEMO, consultar, modificar y cancelar durante la visita. Usa fecha/hora de Venezuela, rechaza horas pasadas y no almacena datos personales de forma persistente. Al recargar la página se reinicia. Sigue sin comprobar disponibilidad real ni enviar información al restaurante.
+
+Versión Cloudflare: `665ff86f-de24-4ab0-947b-77cfff002ce9`. Pruebas completas de 101 comprobaciones en Chromium y WebKit; 10 pruebas específicas por motor para reservas. Verificación pública de 168 archivos/entradas/rutas. Evidencia en `qa/cocktails-reservations/`.

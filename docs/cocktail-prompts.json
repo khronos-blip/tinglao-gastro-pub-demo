@@ -1,0 +1,202 @@
+[
+  {
+    "id": "yellow-flower",
+    "name": "Yellow Flower",
+    "image": "assets/cocktails/yellow-flower.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a golden floral cocktail in a delicate clear coupe, with a tiny edible yellow blossom on the rim. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "don-juan",
+    "name": "Don Juan",
+    "image": "assets/cocktails/don-juan.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: an amber cocktail in a substantial cut-crystal rocks glass with one large clear ice cube and an elegant small citrus twist. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "muy-guay",
+    "name": "Muy Guay",
+    "image": "assets/cocktails/muy-guay.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a coral pink cocktail in a slender tall clear highball glass, subtle ice, with a small restrained pink grapefruit crescent garnish. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "fanfarron",
+    "name": "Fanfarrón",
+    "image": "assets/cocktails/fanfarron.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a deep ruby red cocktail in a graceful clear coupe with a single tiny dark cherry garnish. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "falso-bramble",
+    "name": "Falso Bramble",
+    "image": "assets/cocktails/falso-bramble.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a berry purple cocktail in a short clear tumbler with crushed ice, a single blackberry and a small lemon curl. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "gachupin",
+    "name": "El Gachupín",
+    "image": "assets/cocktails/gachupin.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a pale gold cocktail in an elegant slender Nick and Nora glass with a tiny delicate citrus peel. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "beso-maja",
+    "name": "El Beso de la Maja",
+    "image": "assets/cocktails/beso-maja.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a translucent rosy cocktail in a classic clear V shaped martini glass with one restrained pale pink edible petal. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "sangria-cava",
+    "name": "Sangría Cava Tinglao",
+    "image": "assets/cocktails/sangria-cava.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a single stemmed clear wine glass of pale sparkling fruit sangria, delicate bubbles, a few realistic pale fruit pieces within the drink. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "sangria-tinto",
+    "name": "Sangría Tinto Tinglao",
+    "image": "assets/cocktails/sangria-tinto.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a single stemmed clear wine glass of ruby red fruit sangria with a few realistic orange and apple pieces within the drink. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "cuba",
+    "name": "Cuba Libre",
+    "image": "assets/cocktails/cuba.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a classic Cuba Libre in a tall clear highball glass, dark cola and golden rum hue, ice cubes and a fresh lime wedge. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "whisky-sour",
+    "name": "Whisky Sour",
+    "image": "assets/cocktails/whisky-sour.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a classic Whisky Sour in a short rocks glass, golden amber liquid, large ice, silky thin white foam cap and a tiny cherry garnish. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "mojito",
+    "name": "Mojito",
+    "image": "assets/cocktails/mojito.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a classic Mojito in a tall clear highball glass, pale translucent drink, crushed ice, fresh mint leaves and lime wedges. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "aperol",
+    "name": "Aperol Spritz",
+    "image": "assets/cocktails/aperol.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a classic Aperol Spritz in a large stemmed wine glass, luminous orange liquid, ice cubes and a thin fresh orange slice. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "gin",
+    "name": "Gin & Tonic",
+    "image": "assets/cocktails/gin.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a classic Gin and Tonic in an elegant balloon goblet, clear sparkling liquid, large clear ice cubes and a single lime wheel. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "moscow",
+    "name": "Moscow Mule",
+    "image": "assets/cocktails/moscow.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a classic Moscow Mule in a realistic polished copper mug with handle, ice and a fresh lime wedge, entire mug visible. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "caipirinha",
+    "name": "Caipirinha",
+    "image": "assets/cocktails/caipirinha.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a classic Caipirinha in a sturdy short clear tumbler, pale cloudy lime drink, muddled lime chunks and crushed ice. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "negroni",
+    "name": "Negroni",
+    "image": "assets/cocktails/negroni.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a classic Negroni in a low clear rocks glass, deep translucent red amber liquid, one large ice cube and a broad orange peel. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "vodka",
+    "name": "Vodka & Tonic",
+    "image": "assets/cocktails/vodka.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a classic Vodka and Tonic in a sleek straight sided highball glass, clear sparkling liquid with visible tiny bubbles and clear ice, a small lemon wedge. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "americano-coctel",
+    "name": "Americano",
+    "image": "assets/cocktails/americano-coctel.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a classic Americano cocktail in a tall clear glass, ruby amber sparkling liquid over clear ice and a thin orange half wheel. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "rum",
+    "name": "Rum & Tonic",
+    "image": "assets/cocktails/rum.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a Rum and Tonic in a slim textured highball glass, pale golden sparkling liquid with clear ice and a small lime peel curl. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "margarita",
+    "name": "Margarita",
+    "image": "assets/cocktails/margarita.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a classic Margarita in a traditional wide stepped margarita glass, pale cloudy lime liquid, fine salt rim and a small lime wheel. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "old-fashioned",
+    "name": "Old Fashioned",
+    "image": "assets/cocktails/old-fashioned.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a classic Old Fashioned in a heavy cut crystal lowball glass, rich amber spirit, one large clear ice cube and a curled orange peel. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "daiquiri",
+    "name": "Daiquiri",
+    "image": "assets/cocktails/daiquiri.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: a classic Daiquiri in a fine clear coupe, pale cloudy ivory lime drink without ice in the glass and a tiny restrained lime twist. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "jarra-cava",
+    "name": "Sangría de cava Tinglao",
+    "image": "assets/cocktails/jarra-cava.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: one clear glass pitcher with a graceful handle containing pale sparkling fruit sangria, delicate bubbles and realistic citrus and apple fruit pieces, no extra glasses. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "jarra-tinto",
+    "name": "Sangría de tinto Tinglao",
+    "image": "assets/cocktails/jarra-tinto.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: premium restaurant website cocktail card, one standalone square photograph. Style: premium editorial photorealistic cocktail photography. Scene: dark bottle green and charcoal softly blurred bar background, quiet dark stone bar surface, warm soft lateral light, restrained sophisticated mood. Subject: one clear glass pitcher with a graceful handle containing ruby red sangria, a few realistic orange and apple fruit pieces, no extra glasses. Composition: single drink centered, entire glass or pitcher including base and garnish fully visible, generous square crop margin on all sides, natural slight three quarter camera angle, crisp realistic glass, realistic condensation and liquid optics. No text, letters, logos, watermark, hands, people, collage, extra drinks, bottles or decorative props. This is a conceptual illustrative demo image, not a claim of an actual restaurant house recipe. Generate one square photo only.",
+    "mode": "built-in generate",
+    "tool": "image_gen.imagegen"
+  }
+]

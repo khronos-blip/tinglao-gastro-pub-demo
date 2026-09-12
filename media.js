@@ -1,4 +1,4 @@
-// Illustrative AI images, separately generated per dish. See docs/image-prompts.json.
+// Images for the conceptual demo. Sources: docs/image-prompts.json and docs/cocktail-prompts.json.
 window.TINGLAO_MEDIA = {
   "jamon-serrano": {
     "image": "assets/dishes/jamon-serrano.webp",
@@ -304,6 +304,156 @@ window.TINGLAO_MEDIA = {
     "image": "assets/dishes/chicken-burger.webp",
     "thumbnail": "assets/dishes/chicken-burger-480.webp",
     "alt": "Imagen ilustrativa generada con IA: Chicken Burger",
+    "generated": true
+  },
+  "yellow-flower": {
+    "image": "assets/cocktails/yellow-flower.webp",
+    "thumbnail": "assets/cocktails/yellow-flower-480.webp",
+    "alt": "Yellow Flower",
+    "generated": true
+  },
+  "don-juan": {
+    "image": "assets/cocktails/don-juan.webp",
+    "thumbnail": "assets/cocktails/don-juan-480.webp",
+    "alt": "Don Juan",
+    "generated": true
+  },
+  "muy-guay": {
+    "image": "assets/cocktails/muy-guay.webp",
+    "thumbnail": "assets/cocktails/muy-guay-480.webp",
+    "alt": "Muy Guay",
+    "generated": true
+  },
+  "fanfarron": {
+    "image": "assets/cocktails/fanfarron.webp",
+    "thumbnail": "assets/cocktails/fanfarron-480.webp",
+    "alt": "Fanfarrón",
+    "generated": true
+  },
+  "falso-bramble": {
+    "image": "assets/cocktails/falso-bramble.webp",
+    "thumbnail": "assets/cocktails/falso-bramble-480.webp",
+    "alt": "Falso Bramble",
+    "generated": true
+  },
+  "gachupin": {
+    "image": "assets/cocktails/gachupin.webp",
+    "thumbnail": "assets/cocktails/gachupin-480.webp",
+    "alt": "El Gachupín",
+    "generated": true
+  },
+  "beso-maja": {
+    "image": "assets/cocktails/beso-maja.webp",
+    "thumbnail": "assets/cocktails/beso-maja-480.webp",
+    "alt": "El Beso de la Maja",
+    "generated": true
+  },
+  "sangria-cava": {
+    "image": "assets/cocktails/sangria-cava.webp",
+    "thumbnail": "assets/cocktails/sangria-cava-480.webp",
+    "alt": "Sangría Cava Tinglao",
+    "generated": true
+  },
+  "sangria-tinto": {
+    "image": "assets/cocktails/sangria-tinto.webp",
+    "thumbnail": "assets/cocktails/sangria-tinto-480.webp",
+    "alt": "Sangría Tinto Tinglao",
+    "generated": true
+  },
+  "cuba": {
+    "image": "assets/cocktails/cuba.webp",
+    "thumbnail": "assets/cocktails/cuba-480.webp",
+    "alt": "Cuba Libre",
+    "generated": true
+  },
+  "whisky-sour": {
+    "image": "assets/cocktails/whisky-sour.webp",
+    "thumbnail": "assets/cocktails/whisky-sour-480.webp",
+    "alt": "Whisky Sour",
+    "generated": true
+  },
+  "mojito": {
+    "image": "assets/cocktails/mojito.webp",
+    "thumbnail": "assets/cocktails/mojito-480.webp",
+    "alt": "Mojito",
+    "generated": true
+  },
+  "aperol": {
+    "image": "assets/cocktails/aperol.webp",
+    "thumbnail": "assets/cocktails/aperol-480.webp",
+    "alt": "Aperol Spritz",
+    "generated": true
+  },
+  "gin": {
+    "image": "assets/cocktails/gin.webp",
+    "thumbnail": "assets/cocktails/gin-480.webp",
+    "alt": "Gin & Tonic",
+    "generated": true
+  },
+  "moscow": {
+    "image": "assets/cocktails/moscow.webp",
+    "thumbnail": "assets/cocktails/moscow-480.webp",
+    "alt": "Moscow Mule",
+    "generated": true
+  },
+  "caipirinha": {
+    "image": "assets/cocktails/caipirinha.webp",
+    "thumbnail": "assets/cocktails/caipirinha-480.webp",
+    "alt": "Caipirinha",
+    "generated": true
+  },
+  "negroni": {
+    "image": "assets/cocktails/negroni.webp",
+    "thumbnail": "assets/cocktails/negroni-480.webp",
+    "alt": "Negroni",
+    "generated": true
+  },
+  "vodka": {
+    "image": "assets/cocktails/vodka.webp",
+    "thumbnail": "assets/cocktails/vodka-480.webp",
+    "alt": "Vodka & Tonic",
+    "generated": true
+  },
+  "americano-coctel": {
+    "image": "assets/cocktails/americano-coctel.webp",
+    "thumbnail": "assets/cocktails/americano-coctel-480.webp",
+    "alt": "Americano",
+    "generated": true
+  },
+  "rum": {
+    "image": "assets/cocktails/rum.webp",
+    "thumbnail": "assets/cocktails/rum-480.webp",
+    "alt": "Rum & Tonic",
+    "generated": true
+  },
+  "margarita": {
+    "image": "assets/cocktails/margarita.webp",
+    "thumbnail": "assets/cocktails/margarita-480.webp",
+    "alt": "Margarita",
+    "generated": true
+  },
+  "old-fashioned": {
+    "image": "assets/cocktails/old-fashioned.webp",
+    "thumbnail": "assets/cocktails/old-fashioned-480.webp",
+    "alt": "Old Fashioned",
+    "generated": true
+  },
+  "daiquiri": {
+    "image": "assets/cocktails/daiquiri.webp",
+    "thumbnail": "assets/cocktails/daiquiri-480.webp",
+    "alt": "Daiquiri",
+    "generated": true
+  },
+  "jarra-cava": {
+    "image": "assets/cocktails/jarra-cava.webp",
+    "thumbnail": "assets/cocktails/jarra-cava-480.webp",
+    "alt": "Sangría de cava Tinglao",
+    "generated": true
+  },
+  "jarra-tinto": {
+    "image": "assets/cocktails/jarra-tinto.webp",
+    "thumbnail": "assets/cocktails/jarra-tinto-480.webp",
+    "alt": "Sangría de tinto Tinglao",
     "generated": true
   }
 };
