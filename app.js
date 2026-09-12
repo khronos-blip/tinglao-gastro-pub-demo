@@ -3,13 +3,14 @@
   const $ = s => document.querySelector(s);
   const $$ = s => [...document.querySelectorAll(s)];
   const esc = s => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+  const icon = name => `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-${name}"></use></svg>`;
   const euro = n => new Intl.NumberFormat('es-ES', {style:'currency',currency:'EUR'}).format(n);
   const normalized = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
   const groups = window.TINGLAO_MENU;
-  const photos = {pulpo:{image:'assets/pulpo-gallega.jpg',alt:'Pulpo a la gallega fotografiado por Tinglao',caption:'El momento de compartir.'},tarta:{image:'assets/tarta-vasca.jpg',alt:'Tarta vasca fotografiada por Tinglao',caption:'Siempre hay sitio para el postre.'}};
+  const photos = {...window.TINGLAO_MEDIA,pulpo:{image:'assets/pulpo-gallega.jpg',alt:'Pulpo a la gallega fotografiado por Tinglao',caption:'El momento de compartir.'},tarta:{image:'assets/tarta-vasca.jpg',alt:'Tarta vasca fotografiada por Tinglao',caption:'Siempre hay sitio para el postre.'}};
   const products = groups.flatMap(g => g.items.map(([id,name,price]) => ({id,name,price,category:g.category,group:g.name,note:g.note||'',...photos[id]})));
   const byId = Object.fromEntries(products.map(p => [p.id,p]));
-  const selection = ['pulpo','tarta','jamon-serrano','croquetas','camarones','bravas','fideua','bacon-burger','crema-catalana','sangria-tinto'];
+  const selection = ['pulpo','croquetas','camarones','fideua','bacon-burger','carpaccio','calamares','solomillo','arroz-negro','bravas','tarta','crema-catalana'];
   const cartKey = 'tinglao-demo-cart';
   let filter = 'seleccion', cart = {}, activeDialog = null, returnFocus = null, toastTimer;
   let orderState = {mode:'Retiro',address:'',notes:'',terms:false};
@@ -34,14 +35,15 @@
   function renderProducts() {
     const query=normalized($('#search').value);
     const list=products.filter(p => query ? normalized(p.name+' '+p.group).includes(query) : filter==='seleccion' ? selection.includes(p.id) : p.category===filter);
+    if(!query && filter==='seleccion')list.sort((a,b)=>selection.indexOf(a.id)-selection.indexOf(b.id));
     const featured=list.filter(p => p.image);
     $('#resultCount').textContent=`${list.length} ${list.length===1?'opción':'opciones'}${query?' encontradas':' para elegir'}`;
-    $('#productGrid').innerHTML=featured.map(p => `<article class="product-card" data-id="${p.id}"><button class="product-image detail-btn" data-id="${p.id}" aria-label="Ver detalle de ${esc(p.name)}"><img src="${p.image}" alt="${p.alt}" width="640" height="640" loading="lazy"></button><div class="product-body"><span class="tag">${esc(p.group)}</span><h3><button class="detail-link detail-btn" data-id="${p.id}">${esc(p.name)}</button></h3><p>${p.caption}</p><div class="product-foot"><span class="price">${euro(p.price)}</span><button class="add-btn" data-add="${p.id}" aria-label="Añadir ${esc(p.name)}">+</button></div></div></article>`).join('');
+    $('#productGrid').innerHTML=featured.map(p => `<article class="product-card" data-id="${p.id}"><button class="product-image detail-btn" data-id="${p.id}" aria-label="Ver detalle de ${esc(p.name)}"><img src="${p.image}" ${p.thumbnail?`srcset="${p.thumbnail} 480w, ${p.image} 960w" sizes="(max-width: 680px) 45vw, (max-width: 1150px) 29vw, 23vw"`:''} alt="${esc(p.alt)}" width="960" height="960" loading="lazy" decoding="async"><span class="photo-origin">${p.generated?'Ilustrativa · IA':'Fotografía original'}</span></button><div class="product-body"><span class="tag">${esc(p.group)}</span><h3><button class="detail-link detail-btn" data-id="${p.id}">${esc(p.name)}</button></h3><div class="product-foot"><span class="price">${euro(p.price)}</span><button class="add-btn" data-add="${p.id}" aria-label="Añadir ${esc(p.name)}">${icon('plus')}</button></div></div></article>`).join('');
     $('#productGrid').hidden=!featured.length;
     const displayGroups = !query && filter==='seleccion' ? [{name:'Para seguir disfrutando',selection:true}] : groups;
     $('#menuGroups').innerHTML=list.length ? displayGroups.map(g => {
       const rows=list.filter(p => (g.selection || p.group===g.name)&&!p.image);
-      return rows.length ? `<section class="menu-group" aria-label="${esc(g.name)}"><h3>${esc(g.name)}${g.note?`<span class="group-note">${esc(g.note)}</span>`:''}</h3><div class="menu-list">${rows.map(p => `<article class="menu-row" data-id="${p.id}"><div class="menu-row-copy"><h4><button class="detail-link detail-btn" data-id="${p.id}">${esc(p.name)}</button></h4>${g.selection?`<small class="row-group">${esc(p.group)}</small>`:''}</div><span class="price">${euro(p.price)}</span><button class="add-btn" data-add="${p.id}" aria-label="Añadir ${esc(p.name)} (${esc(g.name)})">+</button></article>`).join('')}</div></section>` : '';
+      return rows.length ? `<section class="menu-group" aria-label="${esc(g.name)}"><h3>${esc(g.name)}${g.note?`<span class="group-note">${esc(g.note)}</span>`:''}</h3><div class="menu-list">${rows.map(p => `<article class="menu-row" data-id="${p.id}"><div class="menu-row-copy"><h4><button class="detail-link detail-btn" data-id="${p.id}">${esc(p.name)}</button></h4>${g.selection?`<small class="row-group">${esc(p.group)}</small>`:''}</div><span class="price">${euro(p.price)}</span><button class="add-btn" data-add="${p.id}" aria-label="Añadir ${esc(p.name)} (${esc(g.name)})">${icon('plus')}</button></article>`).join('')}</div></section>` : '';
     }).join('') : '<div class="empty"><strong>No encontramos ese antojo.</strong><br>Prueba con otro nombre o vuelve a la selección.<br><button class="btn btn-outline" id="clearSearch">Ver la selección</button></div>';
   }
   function renderCart() {
@@ -49,11 +51,12 @@
     $('#cartCount').textContent=count();$('#mobileCount').textContent=count();
     $('.cart-btn').setAttribute('aria-label',`Abrir pedido, ${count()} artículos`);
     $('#subtotal').textContent=euro(subtotal());
-    $('#cartItems').innerHTML=items.length ? items.map(p => `<div class="line-item">${p.image?`<img src="${p.image}" alt="">`:''}<div class="line-item-copy"><strong>${esc(p.name)}</strong><small>${esc(p.group)} · ${euro(p.price)}</small><div class="qty" aria-label="Cantidad de ${esc(p.name)}"><button data-qty="${p.id}" data-delta="-1" aria-label="Restar uno de ${esc(p.name)}">−</button><span>${cart[p.id]}</span><button data-qty="${p.id}" data-delta="1" aria-label="Sumar uno de ${esc(p.name)}" ${cart[p.id]>=20?'disabled':''}>+</button></div></div><strong>${euro(p.price*cart[p.id])}</strong></div>`).join('') : '<div class="empty"><strong>La mesa está por servir.</strong><br>Empieza añadiendo algo de la carta.<br><button class="btn btn-dark" data-close>Explorar la carta</button></div>';
+    $('#cartItems').innerHTML=items.length ? items.map(p => `<div class="line-item">${p.image?`<img src="${p.thumbnail||p.image}" alt="">`:''}<div class="line-item-copy"><strong>${esc(p.name)}</strong><small>${esc(p.group)} · ${euro(p.price)}</small><div class="qty" aria-label="Cantidad de ${esc(p.name)}"><button data-qty="${p.id}" data-delta="-1" aria-label="Restar uno de ${esc(p.name)}">${icon('minus')}</button><span>${cart[p.id]}</span><button data-qty="${p.id}" data-delta="1" aria-label="Sumar uno de ${esc(p.name)}" ${cart[p.id]>=20?'disabled':''}>${icon('plus')}</button></div></div><strong>${euro(p.price*cart[p.id])}</strong></div>`).join('') : '<div class="empty"><strong>La mesa está por servir.</strong><br>Empieza añadiendo algo de la carta.<br><button class="btn btn-dark" data-close>Explorar la carta</button></div>';
     $('#checkoutBtn').disabled=!items.length;
     if(!items.length){orderStage='cart';$('#checkout').innerHTML='';}
     if(orderStage==='preview') {orderStage='form';checkoutForm();}
     $('.drawer-foot').hidden=orderStage==='preview';
+    $('#checkoutBtn').innerHTML=orderStage==='form'?`Revisar pedido ${icon('arrow-right')}`:'Continuar pedido';
   }
   const background = () => $$('header, main, footer, .mobile-dock');
   function closeAll(restore=true) {
@@ -62,16 +65,16 @@
     activeDialog=null;
     if(restore){const target=returnFocus?.isConnected&&!returnFocus.closest('[aria-hidden="true"]')?returnFocus:$('.cart-btn');target?.focus({preventScroll:true});}
   }
-  function openEl(el) {
-    if(!activeDialog) returnFocus=document.activeElement;
+  function openEl(el,trigger) {
+    if(!activeDialog) returnFocus=trigger||document.activeElement;
     closeAll(false);activeDialog=el;el.inert=false;el.classList.add('open');el.setAttribute('aria-hidden','false');
     $('#overlay').classList.add('open');document.body.style.overflow='hidden';background().forEach(node=>node.inert=true);
     el.querySelector('button,input')?.focus({preventScroll:true});
   }
-  function detail(id) {
+  function detail(id,trigger) {
     const p=byId[id];if(!p)return;
-    $('#detailBody').innerHTML=`<div class="detail-grid ${p.image?'':'no-photo'}">${p.image?`<img src="${p.image}" alt="${p.alt}">`:''}<div class="detail-copy"><span class="tag">${esc(p.group)}</span><h3 id="detailTitle">${esc(p.name)}</h3><p class="price">${euro(p.price)}</p>${p.note?`<p>${esc(p.note)}</p>`:''}<p>Precio de referencia de la carta oficial. Consulta ingredientes, alérgenos y disponibilidad con el restaurante antes de un pedido real.</p><div class="field"><label for="detailQty">Cantidad · máximo 20 por artículo en esta demo</label><input id="detailQty" type="number" min="1" max="20" step="1" value="1" inputmode="numeric"></div><div class="error" id="detailError" role="alert"></div><button class="btn btn-dark" id="addDetail" data-id="${p.id}">Añadir al pedido <span>${euro(p.price)}</span></button></div></div>`;
-    openEl($('#detailModal'));
+    $('#detailBody').innerHTML=`<div class="detail-grid ${p.image?'':'no-photo'}">${p.image?`<figure class="detail-image-wrap"><img src="${p.image}" alt="${esc(p.alt)}"><figcaption>${p.generated?'Imagen generada con IA para esta demo. Es ilustrativa y no reproduce la receta ni presentación real del restaurante.':'Fotografía original de Tinglao.'}</figcaption></figure>`:''}<div class="detail-copy"><span class="tag">${esc(p.group)}</span><h3 id="detailTitle">${esc(p.name)}</h3><p class="price">${euro(p.price)}</p>${p.note?`<p>${esc(p.note)}</p>`:''}<p>Precio de referencia de la carta oficial. Consulta ingredientes, alérgenos y disponibilidad con el restaurante antes de un pedido real.</p><div class="field"><label for="detailQty">Cantidad · máximo 20 por artículo en esta demo</label><input id="detailQty" type="number" min="1" max="20" step="1" value="1" inputmode="numeric"></div><div class="error" id="detailError" role="alert"></div><button class="btn btn-dark" id="addDetail" data-id="${p.id}">Añadir al pedido <span>${euro(p.price)}</span></button></div></div>`;
+    openEl($('#detailModal'),trigger);
   }
   function add(id,n=1,open=false) {
     if(!byId[id]||!Number.isInteger(n)||n<1)return;
@@ -85,8 +88,8 @@
   }
   function checkoutForm() {
     if(!count())return;
-    orderStage='form';$('.drawer-foot').hidden=false;
-    $('#checkout').innerHTML=`<p class="form-step">01 / PREPARA TU PEDIDO</p><form id="orderForm" novalidate><h3>¿Cómo lo prefieres?</h3><div class="notice">Pedido de prueba. No se envían datos. El servicio de entrega no está verificado.</div><div class="form-grid"><fieldset class="fieldset"><legend>Modalidad de la simulación</legend><label><input type="radio" name="mode" value="Retiro" ${orderState.mode==='Retiro'?'checked':''}> Retiro</label><label><input type="radio" name="mode" value="Entrega" ${orderState.mode==='Entrega'?'checked':''}> Entrega simulada</label></fieldset><div class="field full" id="addressField" ${orderState.mode==='Entrega'?'':'hidden'}><label for="address">Dirección de ejemplo</label><input id="address" name="address" maxlength="300" autocomplete="off" value="${esc(orderState.address)}" ${orderState.mode==='Entrega'?'required':''}></div><div class="field full"><label for="orderNotes">Notas (opcional)</label><textarea id="orderNotes" name="notes" maxlength="500" placeholder="Usa datos ficticios para probar la experiencia.">${esc(orderState.notes)}</textarea></div><div class="field full"><label><input id="terms" type="checkbox" required ${orderState.terms?'checked':''}> Entiendo que es una simulación y no se enviará el pedido.</label></div></div><div class="error" id="orderError" role="alert"></div><button class="btn btn-dark" type="submit" style="width:100%">Revisar pedido <span aria-hidden="true">→</span></button></form>`;
+    orderStage='form';$('.drawer-foot').hidden=false;$('#checkoutBtn').innerHTML=`Revisar pedido ${icon('arrow-right')}`;
+    $('#checkout').innerHTML=`<p class="form-step">01 / PREPARA TU PEDIDO</p><form id="orderForm" novalidate><h3>¿Cómo lo prefieres?</h3><div class="notice">Pedido de prueba. No se envían datos. El servicio de entrega no está verificado.</div><div class="form-grid"><fieldset class="fieldset"><legend>Modalidad de la simulación</legend><label><input type="radio" name="mode" value="Retiro" ${orderState.mode==='Retiro'?'checked':''}> Retiro</label><label><input type="radio" name="mode" value="Entrega" ${orderState.mode==='Entrega'?'checked':''}> Entrega simulada</label></fieldset><div class="field full" id="addressField" ${orderState.mode==='Entrega'?'':'hidden'}><label for="address">Dirección de ejemplo</label><input id="address" name="address" maxlength="300" autocomplete="off" value="${esc(orderState.address)}" ${orderState.mode==='Entrega'?'required':''}></div><div class="field full"><label for="orderNotes">Notas (opcional)</label><textarea id="orderNotes" name="notes" maxlength="500" placeholder="Usa datos ficticios para probar la experiencia.">${esc(orderState.notes)}</textarea></div><div class="field full"><label><input id="terms" type="checkbox" required ${orderState.terms?'checked':''}> Entiendo que es una simulación y no se enviará el pedido.</label></div></div><div class="error" id="orderError" role="alert"></div><button class="btn btn-dark" type="submit" style="width:100%">Revisar pedido ${icon('arrow-right')}</button></form>`;
     $('#orderForm').addEventListener('input',readOrderState);
     $('#orderForm').addEventListener('change',e=>{readOrderState();if(e.target.name==='mode'){const delivery=orderState.mode==='Entrega';$('#addressField').hidden=!delivery;$('#address').required=delivery;}});
     $('#orderForm').addEventListener('submit',submitOrder);
@@ -107,7 +110,7 @@
     const isOrder=type==='pedido';
     if(isOrder){orderStage='cart';cart={};orderState={mode:'Retiro',address:'',notes:'',terms:false};save();}
     else{$('#reservationForm').reset();$('#reservationForm').hidden=false;$('#reservationPreview').innerHTML='';}
-    $('#confirmBody').innerHTML=`<div class="success"><div class="success-mark" aria-hidden="true">✓</div><span class="eyebrow">ASÍ SERÍA LA EXPERIENCIA</span><h3>${isOrder?'Pedido simulado':'Reserva simulada'}</h3><p>Has completado la prueba. ${isOrder?'El restaurante no ha recibido ningún pedido.':'No se ha reservado ninguna mesa.'} No se ha enviado información ni realizado ningún pago.</p><button class="btn btn-dark" data-close>Volver a la carta <span aria-hidden="true">→</span></button></div>`;
+    $('#confirmBody').innerHTML=`<div class="success"><div class="success-mark" aria-hidden="true">${icon('check')}</div><span class="eyebrow">ASÍ SERÍA LA EXPERIENCIA</span><h3>${isOrder?'Pedido simulado':'Reserva simulada'}</h3><p>Has completado la prueba. ${isOrder?'El restaurante no ha recibido ningún pedido.':'No se ha reservado ninguna mesa.'} No se ha enviado información ni realizado ningún pago.</p><button class="btn btn-dark" data-close>Volver a la carta ${icon('arrow-right')}</button></div>`;
     openEl($('#confirmModal'));
   }
   function localDate() {const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;}
@@ -130,8 +133,8 @@
     $('#confirmReservation').onclick=()=>confirm('reserva');$('#confirmReservation').focus();
   }
   document.addEventListener('click',e=>{
-    const d=e.target.closest('.detail-btn');if(d)detail(d.dataset.id);
-    const o=e.target.closest('[data-open]');if(o){if(o.dataset.open==='cart')openEl($('#cartDrawer'));if(o.dataset.open==='reservation'){$('#rDate').min=localDate();openEl($('#reservationModal'));}}
+    const d=e.target.closest('.detail-btn');if(d)detail(d.dataset.id,d);
+    const o=e.target.closest('[data-open]');if(o){if(o.dataset.open==='cart')openEl($('#cartDrawer'),o);if(o.dataset.open==='reservation'){$('#rDate').min=localDate();openEl($('#reservationModal'),o);}}
     if(e.target.closest('[data-close]'))closeAll();
     const q=e.target.closest('[data-qty]');if(q){readOrderState();const id=q.dataset.qty,delta=Number(q.dataset.delta);cart[id]=Math.max(0,Math.min(20,(cart[id]||0)+delta));if(!cart[id])delete cart[id];save();(document.querySelector(`[data-qty="${id}"][data-delta="${delta}"]:not(:disabled)`)||document.querySelector(`[data-qty="${id}"]:not(:disabled)`)||$('#cartDrawer [data-close]')).focus();}
     const quick=e.target.closest('[data-add]');if(quick)add(quick.dataset.add);
@@ -151,10 +154,12 @@
   });
   document.addEventListener('input',e=>{if(e.target.id==='detailQty'){const n=Number(e.target.value),id=$('#addDetail').dataset.id;$('#addDetail span').textContent=euro(byId[id].price*(Number.isInteger(n)&&n>0?n:1));}});
   $('#search').addEventListener('input',renderProducts);
-  $('#checkoutBtn').addEventListener('click',()=>{readOrderState();checkoutForm();$('#orderForm input')?.focus();});
+  $('#checkoutBtn').addEventListener('click',()=>{if(orderStage==='form'&&$('#orderForm')){$('#orderForm').requestSubmit();return;}readOrderState();checkoutForm();$('#orderForm input')?.focus();});
   $('#reservationForm').addEventListener('submit',reservationSubmit);
   $('#rDate').min=localDate();
   $$('.modal,.drawer').forEach(el=>el.inert=true);
   $('#cartDrawer').setAttribute('role','dialog');$('#cartDrawer').setAttribute('aria-modal','true');
+  const heroPhoto=photos.fideua;
+  if(heroPhoto){$('#heroDish').src=heroPhoto.image;$('#heroDish').alt=heroPhoto.alt;$('#heroPhotoSource').textContent='IMAGEN ILUSTRATIVA · IA';$('#heroPhotoName').textContent='Fideuá';}
   renderProducts();renderCart();
 })();

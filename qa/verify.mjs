@@ -2,28 +2,32 @@ import {createRequire} from 'node:module';
 import {mkdir,writeFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 const require=createRequire(import.meta.url);
-const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const playwright=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const browserName=process.env.QA_BROWSER||'chromium';
 const base=process.env.QA_URL||'http://127.0.0.1:4186/';
 const out=process.env.QA_OUTPUT||'qa/redesign';
 await mkdir(out,{recursive:true});
-const browser=await chromium.launch({headless:true,...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{})});
-const results=[];const errors=[];const requests=[];
+const browser=await playwright[browserName].launch({headless:true,...(browserName==='chromium'&&process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{})});
+const results=[];const errors=[];const requests=[];const navigationCancellations=[];
 const check=(name,value)=>{assert.ok(value,name);results.push(name);};
 const context=await browser.newContext({viewport:{width:1440,height:1000}});
 const page=await context.newPage();
 page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
-page.on('requestfailed',r=>errors.push(r.url()+': '+r.failure()?.errorText));
+page.on('requestfailed',r=>{const message=r.failure()?.errorText||'';if(/ERR_ABORTED|cancelled|canceled/i.test(message))navigationCancellations.push(r.url());else errors.push(r.url()+': '+message);});
 page.on('request',r=>requests.push({url:r.url(),method:r.method()}));
 async function close(){await page.keyboard.press('Escape');}
 async function screenshot(name){await page.screenshot({path:`${out}/${name}.png`,fullPage:name.startsWith('home-'),animations:'disabled'});}
 try {
   await page.goto(base);await page.waitForSelector('.product-card');
+  await page.evaluate(()=>document.fonts.ready);
+  check('All 53 dishes have images with appropriate origin labels',await page.evaluate(()=>{const meals=window.TINGLAO_MENU.filter(g=>g.category!=='bebidas').flatMap(g=>g.items);return meals.length===53&&meals.every(([id])=>['pulpo','tarta'].includes(id)||window.TINGLAO_MEDIA[id]?.generated===true);}));
+  check('No emoji icons in visible interface',await page.evaluate(()=>!(/\p{Extended_Pictographic}/u).test(document.body.innerText)));
+  check('Self-hosted editorial fonts loaded',await page.evaluate(()=>document.fonts.check('400 20px "Cormorant Garamond"')&&document.fonts.check('400 14px "Manrope"')));
   check('113 products, unique IDs and valid prices',await page.evaluate(()=>{const p=window.TINGLAO_MENU.flatMap(g=>g.items);return p.length===113&&new Set(p.map(p=>p[0])).size===113&&p.every(p=>Number.isFinite(p[2])&&p[2]>0);}));
-  check('Selection contains 10 items',await page.locator('[data-add]').count()===10);
+  check('Selection contains 12 items',await page.locator('[data-add]').count()===12);
   for(const width of [390,768,1024,1440]){
     await page.setViewportSize({width,height:width===390?844:1000});
-    await page.locator('#ambiente').scrollIntoViewIfNeeded();
-    await page.waitForFunction(()=>[...document.images].every(i=>i.complete&&i.naturalWidth>0));
+    for(const img of await page.locator('img').all()){await img.scrollIntoViewIfNeeded();await page.waitForFunction(el=>el.complete&&el.naturalWidth>0,await img.elementHandle());}
     await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));
     await page.waitForFunction(()=>window.scrollY===0);
     await screenshot(`home-${width}`);
@@ -31,6 +35,7 @@ try {
     check(`Visible disclosure at ${width}`,await page.locator('.demo-bar').isVisible());
     for(const category of ['tapas','platos','postres','bebidas']){
       await page.locator(`[data-filter="${category}"]`).click();
+      await page.waitForLoadState('networkidle');
       check(`${category} filter at ${width}`,await page.locator('[data-add]').count()>0);
       check(`${category} no overflow at ${width}`,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
     }
@@ -39,7 +44,7 @@ try {
   await page.locator('#search').fill('cafe');
   check('Accent-insensitive search across whole menu',await page.locator('[data-add]').count()===8);
   await page.locator('#search').fill('zzz-no-result');check('Search empty state',await page.locator('#clearSearch').isVisible());
-  await page.locator('#clearSearch').click();check('Clear search restores selection',await page.locator('[data-add]').count()===10);
+  await page.locator('#clearSearch').click();check('Clear search restores selection',await page.locator('[data-add]').count()===12);
   await page.locator('.detail-btn[data-id="pulpo"]').first().click();
   check('Product detail and price',await page.locator('#detailTitle').innerText()==='Pulpo a la gallega'&&(await page.locator('#detailBody').innerText()).includes('30,00'));
   await page.locator('#detailQty').fill('1.5');await page.locator('#addDetail').click();check('Fractional quantity rejected',await page.locator('#detailError').innerText()!=='');
@@ -57,7 +62,8 @@ try {
   await page.locator('input[value="Entrega"]').check();await page.locator('#terms').check();await page.locator('#orderForm button[type="submit"]').click();
   check('Delivery requires address',(await page.locator('#orderError').innerText()).includes('dirección'));
   await page.locator('#address').fill('Dirección ficticia, 123');await page.locator('#orderNotes').fill('<img src=x onerror=alert(1)>');
-  await page.locator('#orderForm button[type="submit"]').click();
+  await page.locator('#checkoutBtn').click();
+  check('Sticky checkout action submits current form',await page.locator('#confirmOrder').isVisible());
   check('Order review contains safe text',await page.locator('#checkout .preview img').count()===0&&(await page.locator('#checkout .preview').innerText()).includes('<img'));
   await screenshot('order-review');
   await page.locator('#editOrder').click();
@@ -90,20 +96,20 @@ try {
   await page.locator('#reservationModal [data-close]').focus();await page.keyboard.press('Shift+Tab');
   check('Keyboard focus trapped in dialog',await page.evaluate(()=>document.activeElement.closest('#reservationModal')!==null));await close();
   await page.evaluate(()=>localStorage.setItem('tinglao-demo-cart','not-json'));await page.reload();
-  check('Corrupt cart storage does not crash page',await page.locator('[data-add]').count()===10&&await page.locator('#cartCount').innerText()==='0');
+  check('Corrupt cart storage does not crash page',await page.locator('[data-add]').count()===12&&await page.locator('#cartCount').innerText()==='0');
   await page.evaluate(()=>localStorage.setItem('tinglao-demo-cart',JSON.stringify({pulpo:200,tarta:-1,stale:8,toString:2})));await page.reload();
   check('Stored quantities capped and unknown keys removed',await page.locator('#cartCount').innerText()==='20');
   await page.evaluate(()=>localStorage.removeItem('tinglao-demo-cart'));await page.reload();
-  await page.locator('[data-filter="platos"]').click();await page.locator('.detail-btn[data-id="bacon-burger"]').click();
-  check('Unpictured item does not borrow food imagery',await page.locator('#detailBody img').count()===0);await page.locator('#addDetail').click();
-  await close();await page.locator('.detail-btn[data-id="chicken-burger"]').click();await page.locator('#addDetail').click();check('Decimal prices total correctly',(await page.locator('#subtotal').innerText()).includes('19,98'));await close();
+  await page.locator('[data-filter="platos"]').click();await page.locator('.product-image[data-id="bacon-burger"]').click();
+  check('Generated dish photo is explicitly illustrative',await page.locator('#detailBody img').count()===1 && (await page.locator('#detailBody figcaption').innerText()).includes('generada con IA'));await page.locator('#addDetail').click();
+  await close();await page.locator('.product-image[data-id="chicken-burger"]').click();await page.locator('#addDetail').click();check('Decimal prices total correctly',(await page.locator('#subtotal').innerText()).includes('19,98'));await close();
   await page.setViewportSize({width:390,height:844});await page.locator('.mobile-dock [data-open="reservation"]').click();await screenshot('reservation-mobile');
   check('Mobile dialog fits viewport',await page.locator('#reservationModal').evaluate(n=>{const r=n.getBoundingClientRect();return r.left>=0&&r.right<=innerWidth&&r.top>=30&&r.bottom<=innerHeight;}));await close();
   await page.locator('.mobile-dock [data-open="cart"]').click();await page.locator('#checkoutBtn').click();await screenshot('checkout-mobile');check('Mobile cart no overflow',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await close();
   await page.emulateMedia({reducedMotion:'reduce'});check('Reduced motion respected',await page.locator('.btn').first().evaluate(n=>getComputedStyle(n).transitionDuration==='0s'));
   check('No browser or network errors',errors.length===0);
   check('No external requests or data submissions',requests.every(r=>new URL(r.url).origin===new URL(base).origin&&r.method==='GET'));
-  const report={status:'pass',url:base,runAt:new Date().toISOString(),checks:results.length,results,errors,requestCount:requests.length};
+  const report={status:'pass',browser:browserName,url:base,runAt:new Date().toISOString(),checks:results.length,results,errors,requestCount:requests.length,navigationCancellations};
   await writeFile(`${out}/report.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 } catch(e) {
   await screenshot('failure');await writeFile(`${out}/report.json`,JSON.stringify({status:'fail',results,errors,error:e.stack},null,2));console.error(e);process.exitCode=1;

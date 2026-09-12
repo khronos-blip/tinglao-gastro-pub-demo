@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developers.cloudflare.com/workers/wrangler-schema.json",
+  "name": "tinglao-demo",
+  "account_id": "d217a180cce0ab1310d0b718b4cb0850",
+  "compatibility_date": "2026-09-12",
+  "workers_dev": false,
+  "preview_urls": false,
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    {"pattern": "tinglao.khronosonline.work", "custom_domain": true}
+  ]
+}

@@ -1,0 +1,402 @@
+[
+  {
+    "id": "jamon-serrano",
+    "name": "Jamón Serrano",
+    "image": "assets/dishes/jamon-serrano.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: pintxo, toasted baguette slice topped with delicate folds of cured serrano ham. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "manchego-padron",
+    "name": "Manchego & Padrón",
+    "image": "assets/dishes/manchego-padron.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: pintxo, toasted baguette slice with manchego cheese and a blistered green padrón pepper. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "manchego-serrano",
+    "name": "Manchego & Serrano",
+    "image": "assets/dishes/manchego-serrano.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: pintxo, toasted baguette slice with manchego cheese and delicate cured serrano ham. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "morcilla-cebolla",
+    "name": "Morcilla & Cebolla",
+    "image": "assets/dishes/morcilla-cebolla.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: pintxo, toasted baguette slice topped with cooked Spanish black pudding and soft cooked onion. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "chistorra-padron",
+    "name": "Chistorra & Padrón",
+    "image": "assets/dishes/chistorra-padron.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: pintxo, toasted bread with cooked chistorra sausage and blistered padrón pepper. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "pulpo-queso",
+    "name": "Pulpo & Queso Crema",
+    "image": "assets/dishes/pulpo-queso.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: pintxo, toasted bread topped with cream cheese and a few slices of cooked octopus. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "serrano-pate-mango",
+    "name": "Serrano, Paté & Mango",
+    "image": "assets/dishes/serrano-pate-mango.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: pintxo, toasted bread with a smooth paté layer, cured serrano ham and a small ripe mango accent. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "surimi",
+    "name": "Surimi de Camarón",
+    "image": "assets/dishes/surimi.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: pintxo, toasted bread topped with a modest creamy chopped shrimp-style surimi mixture. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "piquillo",
+    "name": "Piquillo, Morcilla codorniz",
+    "image": "assets/dishes/piquillo.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: pintxo, toasted bread topped with roasted red piquillo pepper, black pudding and small cooked quail egg. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "camarones",
+    "name": "Camarones al ajillo",
+    "image": "assets/dishes/camarones.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a shallow ceramic dish of succulent shrimp cooked in olive oil with thin garlic slices. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "calamares",
+    "name": "Calamares a la andaluza",
+    "image": "assets/dishes/calamares.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a plate of golden lightly floured fried squid rings, crisp delicate coating. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "croquetas",
+    "name": "Trío de Croquetas",
+    "image": "assets/dishes/croquetas.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a plate of three golden Spanish croquettes, one cut open showing a creamy interior; fillings not distinguishable. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "croquetas-morcilla",
+    "name": "Croquetas de morcilla",
+    "image": "assets/dishes/croquetas-morcilla.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: Spanish black pudding croquettes, golden exterior with one cut open showing darker creamy filling. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "croquetas-jamon",
+    "name": "Croquetas de jamón ibérico",
+    "image": "assets/dishes/croquetas-jamon.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: Spanish Iberian ham croquettes, crisp golden exterior and one open showing pale bechamel with small ham flecks. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "tortilla",
+    "name": "Tortilla de patatas de la Oiga",
+    "image": "assets/dishes/tortilla.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: thick Spanish potato omelette with a triangular wedge separated to reveal tender potato layers. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "padron",
+    "name": "Pimientos de Padrón",
+    "image": "assets/dishes/padron.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a plate piled with blistered green padrón peppers and a few flakes of coarse salt. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "tabla",
+    "name": "Tabla salumeria",
+    "image": "assets/dishes/tabla.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: an elegant charcuterie sharing board of thinly sliced cured meats, natural folds and textures. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "pan-tumaca",
+    "name": "Pan tumaca",
+    "image": "assets/dishes/pan-tumaca.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: toasted rustic bread with fresh crushed ripe tomato and glistening olive oil. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "crujiente",
+    "name": "Crujiente de plátano y camarón",
+    "image": "assets/dishes/crujiente.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a crisp golden plantain bite topped with cooked shrimp, restrained plated tapa. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "carpaccio",
+    "name": "Carpaccio de res",
+    "image": "assets/dishes/carpaccio.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: an elegant plate of very thin slices of beef carpaccio, light olive oil sheen. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "chistorra",
+    "name": "Chistorra ración",
+    "image": "assets/dishes/chistorra.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a sharing plate of pan-seared chistorra sausage cut into juicy bite-size pieces. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "bravas",
+    "name": "Patatas bravas",
+    "image": "assets/dishes/bravas.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: golden crisp fried potato chunks with a modest spooning of red bravas sauce. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "fritas",
+    "name": "Patatas fritas",
+    "image": "assets/dishes/fritas.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a generous neat serving of golden crisp French fries with light salt. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "huevos",
+    "name": "Huevos Tinglao",
+    "image": "assets/dishes/huevos.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a restrained interpretive egg tapa, two fried eggs with golden potato pieces, simple presentation without asserting a specific house recipe. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "huevos-camaron",
+    "name": "Huevos con camarón",
+    "image": "assets/dishes/huevos-camaron.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a plated egg dish with cooked shrimp and softly set eggs, appetizing simple presentation. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "bisque",
+    "name": "Bisque de camarones",
+    "image": "assets/dishes/bisque.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a tiny ceramic tasting cup of smooth warm coral-orange shrimp bisque, clearly a soup shot. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "crema-ajoporro",
+    "name": "Crema de ajoporro",
+    "image": "assets/dishes/crema-ajoporro.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a tiny ceramic tasting cup of velvety pale leek soup, clearly a soup shot. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "crema-auyama",
+    "name": "Crema de auyama",
+    "image": "assets/dishes/crema-auyama.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a tiny ceramic tasting cup of velvety orange pumpkin soup, clearly a soup shot. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "crema-coliflor",
+    "name": "Crema de coliflor",
+    "image": "assets/dishes/crema-coliflor.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a tiny ceramic tasting cup of velvety ivory cauliflower soup, clearly a soup shot. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "fideua",
+    "name": "Fideuá",
+    "image": "assets/dishes/fideua.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a shallow paella pan of golden toasted short noodles with seafood, an appetizing Spanish fideuá. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "arroz-negro",
+    "name": "Arroz negro",
+    "image": "assets/dishes/arroz-negro.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a shallow paella pan of glossy black squid-ink rice with modest visible seafood. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "arroz-mariscos",
+    "name": "Arroz meloso de mariscos",
+    "image": "assets/dishes/arroz-mariscos.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a shallow ceramic bowl of luscious moist seafood rice with shrimp and shellfish. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "parrilla",
+    "name": "Parrilla mar y tierra",
+    "image": "assets/dishes/parrilla.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: an elegant sharing platter of grilled beef and grilled seafood with charred texture, surf and turf. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "chicken-burger",
+    "name": "Chicken Burger",
+    "image": "assets/dishes/chicken-burger.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a chicken burger in a soft toasted bun, crisp chicken fillet and simple lettuce, accompanied by golden French fries. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "bacon-burger",
+    "name": "Bacon Burger",
+    "image": "assets/dishes/bacon-burger.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a beef burger in a soft toasted bun with crisp bacon, accompanied by golden French fries. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "berciana",
+    "name": "Berciana Burger",
+    "image": "assets/dishes/berciana.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a restrained interpretive beef burger in a toasted bun, simple garnish, accompanied by golden French fries, no unusual ingredients or recipe claims. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "pollo",
+    "name": "Pollo chilindrón",
+    "image": "assets/dishes/pollo.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: rustic chicken pieces in rich tomato and red pepper sauce, Spanish pollo al chilindrón. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "pesca",
+    "name": "Pesca a la plancha",
+    "image": "assets/dishes/pesca.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a grilled white fish fillet with crisp golden surface, minimal plated presentation without identifying a fish species. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "solomillo",
+    "name": "Solomillo importado",
+    "image": "assets/dishes/solomillo.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a thick grilled beef tenderloin medallion, rich seared crust, elegant minimal plate. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "bocata-iberico",
+    "name": "Ibérico",
+    "image": "assets/dishes/bocata-iberico.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a rustic baguette sandwich filled with thinly sliced Iberian cured ham. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "bocata-manchego",
+    "name": "Manchego",
+    "image": "assets/dishes/bocata-manchego.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a rustic baguette sandwich filled with slices of manchego cheese. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "bocata-serrano",
+    "name": "Serrano",
+    "image": "assets/dishes/bocata-serrano.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a rustic baguette sandwich filled with delicate serrano cured ham. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "cesar",
+    "name": "Cesar Clasica",
+    "image": "assets/dishes/cesar.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a classic Caesar salad, crisp romaine, croutons, shaved hard cheese and creamy dressing. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "cesar-pollo",
+    "name": "Cesar con Pollo",
+    "image": "assets/dishes/cesar-pollo.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a classic Caesar salad with sliced grilled chicken breast, crisp romaine, croutons and creamy dressing. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "peques-cheese",
+    "name": "Cheese Burger",
+    "image": "assets/dishes/peques-cheese.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a small simple cheeseburger with a beef patty and melted cheese in a soft bun, child-size serving. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "dedos-pollo",
+    "name": "Dedos de pollo",
+    "image": "assets/dishes/dedos-pollo.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a plate of golden crisp breaded chicken fingers. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "dedos-pescado",
+    "name": "Dedos de pescado",
+    "image": "assets/dishes/dedos-pescado.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a plate of golden crisp breaded fish fingers, one cut open revealing flaky white fish. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "crema-catalana",
+    "name": "Crema Catalana",
+    "image": "assets/dishes/crema-catalana.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a shallow ramekin of crema catalana with a thin glossy caramelized sugar crust, a small crack revealing creamy custard. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "mousse",
+    "name": "Mousse de Chocolate",
+    "image": "assets/dishes/mousse.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a small elegant ceramic dessert cup of airy dark chocolate mousse, natural spoon-swirled texture. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  },
+  {
+    "id": "misu",
+    "name": "Misu",
+    "image": "assets/dishes/misu.webp",
+    "prompt": "Use case: photorealistic-natural. Asset type: conceptual restaurant-menu demo photo; illustrative AI food photography, not documentation of a real restaurant dish. Primary request: a restrained interpretive layered cream dessert with a light cocoa dusting in a small glass, neutral tiramisu-like visual without asserting a specific house recipe. Style: premium editorial culinary photography, highly realistic appetizing food textures. Art direction consistent across the series: bottle-green or warm cream handmade ceramic tableware, dark charcoal table, soft warm lateral window light, subtle blurred dark background. Composition: single distinct dish centered, medium close three-quarter food photograph, enough margin for responsive square cropping, 1024 by 1024 square image. No text, letters, logos, watermark, hands, people, collage or multiple panels. No extra dishes or drinks.",
+    "mode": "built-in image_gen",
+    "tool": "image_gen.imagegen"
+  }
+]
