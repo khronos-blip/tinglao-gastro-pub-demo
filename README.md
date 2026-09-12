@@ -1,58 +1,63 @@
-# Tinglao Gastro Pub — demo premium
+# Tinglao Gastro Pub — demo para presentar
 
-Demo conceptual y no oficial de un storefront para Tinglao Gastro Pub, Valencia (Venezuela).
+Demo conceptual y no oficial para Tinglao Gastro Pub, Valencia (Venezuela). No existe afiliación ni aprobación declarada por el restaurante.
 
-## Ver la demo
+**Web pública:** https://khronos-blip.github.io/tinglao-gastro-pub-demo/
 
-- GitHub Pages: https://khronos-blip.github.io/tinglao-gastro-pub-demo/
+## Experiencia
+
+- Dirección visual gastronómica en verde botella, crema y cobre, con fotografías originales, tipografía editorial y adaptación a móvil, tableta y escritorio.
+- Carta digital con **113 opciones en 22 secciones**, transcritas de las dos páginas de `menu-oficial.pdf`. Selección inicial de 10 opciones, categorías y búsqueda global que ignora tildes.
+- Los importes están en EUR como en el PDF. Son precios de referencia del documento, sin afirmar vigencia o disponibilidad.
+- Solo Pulpo a la gallega y Tarta Vasca llevan fotografías de platos: son las correspondencias verificadas. Los demás productos se presentan en texto, sin fotografías prestadas ni ingredientes inventados.
+- Detalle de cada producto, adición directa, cantidades, subtotales y carrito persistente en el navegador.
+- Pedido simulado con retiro o entrega de ejemplo, dirección obligatoria en entrega, revisión, edición y confirmación local. La entrega no está verificada como servicio real.
+- Reserva simulada con validación de fecha, cantidad de personas y teléfono; revisión y edición antes de confirmar. No comprueba horarios, capacidad ni disponibilidad. El límite de 20 personas/unidades es únicamente una restricción de la demo.
+- Acceso rápido a pedido y reserva en móvil. Diálogos con foco contenido, devolución de foco, cierre con Escape y fondo inerte. Compatibilidad con movimiento reducido.
+
+## Límites de la demo
+
+**Demo no oficial · Pedidos y reservas simulados.** El aviso permanece visible incluso al abrir los formularios.
+
+No se abren WhatsApp ni pasarelas de pago desde los flujos del restaurante. No hay backend, analítica, APIs, autenticación ni recepción real de solicitudes. Los formularios indican que se usen datos ficticios. Solo se guarda el contenido del carrito en `localStorage`; direcciones y datos de reserva no se persisten.
+
+El único enlace externo comercial corresponde a Gustavo/Gviso Web y está separado de los flujos del restaurante. Un clic voluntario permite conversar sobre la propuesta de web, nunca enviar el pedido o la reserva.
+
+Las marcas, fotografías y carta pertenecen a sus titulares. Consulta [ASSET-NOTICE.md](ASSET-NOTICE.md). La demo no concede licencias de reutilización.
+
+## Archivos
+
+- `index.html`: estructura, navegación y formularios.
+- `styles.css`: presentación adaptable y estados de la interfaz.
+- `menu.js`: transcripción de la carta y referencias de precios.
+- `app.js`: catálogo, carrito, validación y simulaciones.
+- `menu-oficial.pdf`: documento original conservado sin modificaciones.
+- `assets/`: fotografías originales conservadas.
+
+No se añaden dependencias, CDN ni proceso de compilación. GitHub Pages sirve `main` desde la raíz.
 
 ## Ejecutar localmente
 
-```bash
-python3 -m http.server 8080
+```sh
+python3 -m http.server 4186 --bind 127.0.0.1
 ```
 
-Abre `http://127.0.0.1:8080/`.
+Abre `http://127.0.0.1:4186/`.
 
-## Alcance implementado
+## Verificación
 
-- Identidad visual propia basada en la presencia pública de Tinglao.
-- Catálogo de muestra con dos correspondencias nombre–foto verificables: Pulpo a la gallega y Tarta Vasca.
-- Carta oficial completa conservada como PDF local.
-- Búsqueda, filtros, detalle, cantidades, carrito persistente y subtotal.
-- Flujos simulados de retiro/entrega, reserva y vista previa de mensajes para WhatsApp.
-- La demo no envía pedidos, reservas ni datos al negocio.
-- CTA comercial separado hacia Gustavo/Gviso Web.
+El rediseño superó **81 comprobaciones**: 390, 768, 1024 y 1440 px, categorías, búsqueda, detalle, dos productos, cantidades, decimales, persistencia y recuperación de almacenamiento corrupto, retiro/entrega, edición de revisiones, validación de reservas, confirmaciones, teclado y movimiento reducido. Sin desbordamiento horizontal, errores de navegador, solicitudes externas ni envío de datos.
 
-## Transparencia
+Evidencia local: [`qa/redesign/report.json`](qa/redesign/report.json) y capturas `qa/redesign/home-*.png`. La evidencia `qa/qa-report.json` y `qa/screenshots/` corresponde a la versión inicial.
 
-**Página web demo · Sitio no oficial · Pedidos y reservas simulados.**
+Para repetir las pruebas con una instalación existente de Playwright (solo herramienta de QA, no dependencia de la web):
 
-No existe afiliación ni aprobación declarada por Tinglao Gastro Pub. Las marcas, fotografías y contenido original pertenecen a sus respectivos titulares y se incluyen únicamente para presentar esta demo conceptual. No se concede una licencia de reutilización sobre esos activos.
+```sh
+PLAYWRIGHT_MODULE=/ruta/a/playwright CHROME_PATH=/ruta/al/ejecutable/chrome node qa/verify.mjs
+```
 
-## QA
+Variables opcionales: `QA_URL` para verificar la web pública y `QA_OUTPUT` para guardar la evidencia en otra carpeta. La prueba no pulsa el enlace de contacto comercial.
 
-La versión inicial superó 20/20 comprobaciones funcionales automatizadas:
+## Criterios que deben conservarse
 
-- desktop 1440×1000 y móvil 390×844;
-- cero errores de consola y de página;
-- cero solicitudes fallidas o fuera de origen;
-- cero desbordamiento horizontal;
-- carrito, persistencia, entrega, reserva y confirmaciones simuladas;
-- HTML/DOM, referencias locales y JavaScript verificados.
-
-Los reportes y capturas están en [`qa/`](qa/).
-
-## Encargo para Codex
-
-Revisa y mejora la dirección visual sin romper los flujos ni los gates. Prioridades:
-
-1. elevar tipografía, ritmo, microinteracciones y composición manteniendo el hero compacto;
-2. conservar verde botella, crema, cobre, carbón y el carácter botánico/nocturno;
-3. mantener el disclosure no oficial siempre visible;
-4. no inventar productos, descripciones, horarios, reseñas, dirección ni servicios;
-5. no añadir dependencias, CDN, analítica, APIs, pagos ni envíos reales;
-6. conservar accesibilidad, `prefers-reduced-motion` y funcionamiento estático;
-7. probar a 390, 768, 1024 y 1440 px, sin overflow ni errores de consola.
-
-Antes de cerrar cualquier mejora, vuelve a probar búsqueda, filtros, detalle, dos artículos, subtotal, persistencia, retiro/entrega, dirección obligatoria, reserva y ambas confirmaciones.
+Mantener la transparencia de la demo, el funcionamiento estático, los precios y nombres del documento, las correspondencias fotográficas verificadas y la separación del contacto comercial. No activar reservas, pedidos, pagos, entregas ni servicios reales sin el alcance y los canales autorizados del restaurante.
