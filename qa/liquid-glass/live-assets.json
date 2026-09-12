@@ -1,0 +1,705 @@
+{
+  "status": "pass",
+  "base": "https://tinglao.khronosonline.work/",
+  "runAt": "2026-09-12T21:07:09.251Z",
+  "checks": 118,
+  "results": [
+    {
+      "file": "favicon.svg",
+      "status": 200,
+      "bytes": 252,
+      "sha256": "8e8eab6f371989f9cb55cc580a7ae73e6573b032ae7c1201fe0cfad5cd64999f"
+    },
+    {
+      "file": "media.js",
+      "status": 200,
+      "bytes": 11051,
+      "sha256": "d71d13909f6f6fd8957ea49d82cf876cb123f164798db17adf42c1f58287fc12"
+    },
+    {
+      "file": "app.js",
+      "status": 200,
+      "bytes": 19204,
+      "sha256": "bac42ecde1e2a4cdee13c135400151fcf7d7932dfd8c8cd1cd04f945f7a9ff53"
+    },
+    {
+      "file": "menu.js",
+      "status": 200,
+      "bytes": 5367,
+      "sha256": "39f8083ff4fe74818ce1dbf482e345c489999c0d37dc87209c651bcbbfdf5589"
+    },
+    {
+      "file": "assets/dishes/arroz-mariscos-480.webp",
+      "status": 200,
+      "bytes": 39686,
+      "sha256": "a50084591e609e9fdba7fe219ead72b51a861cc8fda0304b874ceb88619c2a7f"
+    },
+    {
+      "file": "assets/dishes/arroz-negro-480.webp",
+      "status": 200,
+      "bytes": 38622,
+      "sha256": "dafb50d57609566d0b816310f4de9e364bc6ae61bdbc4ad8fc5a1d4ad717082a"
+    },
+    {
+      "file": "assets/dishes/arroz-mariscos.webp",
+      "status": 200,
+      "bytes": 147222,
+      "sha256": "f3122d0ecd774499dddf8ebc01d00352177d670c1e965606adfaa83227654533"
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "bytes": 12898,
+      "sha256": "1f4ff2c289921f8537a9abd058eb91eb37bdaf33314a636022349418a911d299"
+    },
+    {
+      "file": "assets/dishes/bacon-burger-480.webp",
+      "status": 200,
+      "bytes": 35770,
+      "sha256": "d7a7ec90857e34bbc70da0e5b46698868e71d0d81c91afc99d8a5db7ae50d72b"
+    },
+    {
+      "file": "assets/dishes/arroz-negro.webp",
+      "status": 200,
+      "bytes": 146686,
+      "sha256": "8c1e806702732a9821bae01f9f8728e0fc6919aaac36c6db24b6ad476a962f03"
+    },
+    {
+      "file": "assets/dishes/bacon-burger.webp",
+      "status": 200,
+      "bytes": 137310,
+      "sha256": "4e221b4f2efac87880fbfb0526f4b651b18938b92a71e53cd77ac4c7f4ee345c"
+    },
+    {
+      "file": "menu-oficial.pdf",
+      "status": 200,
+      "bytes": 758893,
+      "sha256": "d6723cb5122a61294e571633367aff077dd3020b36ff838305b92028d39d0790"
+    },
+    {
+      "file": "assets/dishes/berciana-480.webp",
+      "status": 200,
+      "bytes": 33150,
+      "sha256": "6bb5e3664b3ebc10b6e4a95c635b1955b16b86e9986c5833eb2d101debc99758"
+    },
+    {
+      "file": "assets/dishes/bisque-480.webp",
+      "status": 200,
+      "bytes": 26126,
+      "sha256": "99d65150445408ebed503464a0935a54dbee4dbca68e880cd797ece0da0332dc"
+    },
+    {
+      "file": "styles.css",
+      "status": 200,
+      "bytes": 33517,
+      "sha256": "911491eb09365948327271800841f88d58f516e8f788819c6daa0c3cb3be5ac9"
+    },
+    {
+      "file": "assets/dishes/berciana.webp",
+      "status": 200,
+      "bytes": 135346,
+      "sha256": "c09d2b166db27ad3397fd3237e32c692acc2c8ee8fc031ed0f681d3161d6b541"
+    },
+    {
+      "file": "assets/dishes/bocata-iberico-480.webp",
+      "status": 200,
+      "bytes": 37268,
+      "sha256": "66928f1785701b45babe1a36983e1622bf2746aab145d5c2eda920eccac44100"
+    },
+    {
+      "file": "assets/dishes/bisque.webp",
+      "status": 200,
+      "bytes": 100368,
+      "sha256": "ccf7f47add62da33a1624ff9a0342724e7ef894d41dcea723cd2ff042e5f5263"
+    },
+    {
+      "file": "assets/dishes/bocata-manchego-480.webp",
+      "status": 200,
+      "bytes": 35000,
+      "sha256": "762f8c184fbbfc1f0f9a5db104a1a85923951373a02b09ef4b14e14d75464c72"
+    },
+    {
+      "file": "assets/dishes/bocata-serrano-480.webp",
+      "status": 200,
+      "bytes": 33022,
+      "sha256": "27d5d6160f3d93dde29785a025a1e362f0be9d849b498d100295ba1cf58d2710"
+    },
+    {
+      "file": "assets/dishes/bocata-serrano.webp",
+      "status": 200,
+      "bytes": 120304,
+      "sha256": "58e4dcbdd9043dfa8de4fa8e2e265c345b50c20ccd65f0dbd00d09ef7595592e"
+    },
+    {
+      "file": "assets/dishes/bocata-iberico.webp",
+      "status": 200,
+      "bytes": 153720,
+      "sha256": "c568493ac85c5470fef3f63db584dc4ec8f6274c7e6c9248cedda2a421aff260"
+    },
+    {
+      "file": "assets/dishes/bravas-480.webp",
+      "status": 200,
+      "bytes": 36256,
+      "sha256": "61478b9db6ec5ceee35bb2a922cbca987dd653865e66a8f332e60bc6b3e21a97"
+    },
+    {
+      "file": "assets/dishes/bocata-manchego.webp",
+      "status": 200,
+      "bytes": 141194,
+      "sha256": "c4eab4c66e099a228ad99e8b56fc91da149d3136c08c4ed25f34f14cd1151ae9"
+    },
+    {
+      "file": "assets/dishes/bravas.webp",
+      "status": 200,
+      "bytes": 152466,
+      "sha256": "e0f08cd03d9e2dfa40af868be507384300a0ebada2abed6148af1f680af536af"
+    },
+    {
+      "file": "assets/dishes/calamares-480.webp",
+      "status": 200,
+      "bytes": 38012,
+      "sha256": "c1f023fae4737260b23b2d6824025bdd66a150e363af05878e23fc91049cff2a"
+    },
+    {
+      "file": "assets/dishes/calamares.webp",
+      "status": 200,
+      "bytes": 141900,
+      "sha256": "2c871694a28d2d51112b460b677cfb929474a5a1b7324e495fd1fd4094421a81"
+    },
+    {
+      "file": "assets/dishes/carpaccio-480.webp",
+      "status": 200,
+      "bytes": 39242,
+      "sha256": "1335a13f4db5a3b996a342c34ee6a0a8724cc5b3defb4b0bd5c0a508293704f3"
+    },
+    {
+      "file": "assets/dishes/camarones-480.webp",
+      "status": 200,
+      "bytes": 37570,
+      "sha256": "f3031665af70d94d370bdff5d980e63ecefeeebab0f09fd3e642dca81c9377c3"
+    },
+    {
+      "file": "assets/dishes/camarones.webp",
+      "status": 200,
+      "bytes": 136658,
+      "sha256": "2b058098e5178fa84685b3eb0c059628c6a2ce7acec948ac0fad9456bd0ac000"
+    },
+    {
+      "file": "assets/dishes/cesar-480.webp",
+      "status": 200,
+      "bytes": 43588,
+      "sha256": "449de299cad69cfc64915fc1bd950fd5ebb9afb849b84805a4cb526a2c3627b3"
+    },
+    {
+      "file": "assets/dishes/carpaccio.webp",
+      "status": 200,
+      "bytes": 144352,
+      "sha256": "90c6f520f80bcee657fb3d60aecf8b8e930a8cff444eea7f07b6e7df828be990"
+    },
+    {
+      "file": "assets/dishes/cesar-pollo-480.webp",
+      "status": 200,
+      "bytes": 48848,
+      "sha256": "0eea2c37e373d303fa5225d3f73c2a3196380c1b015abfc6f9d015028ce67c8d"
+    },
+    {
+      "file": "assets/dishes/chicken-burger-480.webp",
+      "status": 200,
+      "bytes": 34250,
+      "sha256": "59b788d36b90b90b48d5631438776db6b88c8642390e745785c4519e2af9cf2e"
+    },
+    {
+      "file": "assets/dishes/cesar-pollo.webp",
+      "status": 200,
+      "bytes": 185162,
+      "sha256": "84e39f01924c8badbb5ebfdbcb6d1e33f5171a96478b9cb02c64d33d1db67570"
+    },
+    {
+      "file": "assets/dishes/chistorra-480.webp",
+      "status": 200,
+      "bytes": 40600,
+      "sha256": "b980a2aeb4c27a2f4b51948f4c2880fcd22d73ac4243503432f8edb68e9bfe2d"
+    },
+    {
+      "file": "assets/dishes/chicken-burger.webp",
+      "status": 200,
+      "bytes": 134060,
+      "sha256": "07dd3f30bdc3ea8119aa35f46dff4d1fc1c0e05a3bb63b5235c5ab26f24627ae"
+    },
+    {
+      "file": "assets/dishes/chistorra-padron-480.webp",
+      "status": 200,
+      "bytes": 31342,
+      "sha256": "d68fe664ca8e2b18bce5869588f2b019442e8935d8acfe47777359ced911da7e"
+    },
+    {
+      "file": "assets/dishes/cesar.webp",
+      "status": 200,
+      "bytes": 174204,
+      "sha256": "d38d8dc882d8e5439b5ebe8d7f2b7e2d4a54612d47b3853d7257ece10ee046f4"
+    },
+    {
+      "file": "assets/dishes/crema-ajoporro-480.webp",
+      "status": 200,
+      "bytes": 21156,
+      "sha256": "40d0e6404e3b8d6fafee95948d0ba1f2e0191cec2150ec65708d033e9fe53c18"
+    },
+    {
+      "file": "assets/dishes/chistorra-padron.webp",
+      "status": 200,
+      "bytes": 117904,
+      "sha256": "45bc68b8e6b8705bf471a575d97e506a56747fa27831022414c5e4467ee6e324"
+    },
+    {
+      "file": "assets/dishes/chistorra.webp",
+      "status": 200,
+      "bytes": 158564,
+      "sha256": "9a7b562c22df84f096882d28ae63e7e4f076fac60723e23c258d0b193cf3bc0f"
+    },
+    {
+      "file": "assets/dishes/crema-auyama-480.webp",
+      "status": 200,
+      "bytes": 25990,
+      "sha256": "a7bf53ebb025d57e24ccee8b94ad23d5cbbb557572d6683b3071ab33927be210"
+    },
+    {
+      "file": "assets/dishes/crema-ajoporro.webp",
+      "status": 200,
+      "bytes": 81430,
+      "sha256": "cb6c35a429b09198b3887a17ecfa72414fcb234c00dba88b6597e2140d32df99"
+    },
+    {
+      "file": "assets/dishes/crema-auyama.webp",
+      "status": 200,
+      "bytes": 100708,
+      "sha256": "084748a2ec2a89f42845dd597865d073423623e39d471c0a02a9ae0f1290f3e6"
+    },
+    {
+      "file": "assets/dishes/crema-catalana-480.webp",
+      "status": 200,
+      "bytes": 34560,
+      "sha256": "c886482d1e7d6c782271783f2a13fe79b468a781c17cce164258423008df5ee5"
+    },
+    {
+      "file": "assets/dishes/crema-coliflor-480.webp",
+      "status": 200,
+      "bytes": 21780,
+      "sha256": "599e856c8f6036de96ed7cbcec0724b068dc7c826a2ddb907f8277071cdff246"
+    },
+    {
+      "file": "assets/dishes/crema-catalana.webp",
+      "status": 200,
+      "bytes": 131174,
+      "sha256": "6799e22cbe6d2ac0c97b64ccb93eca1109fd0844ca616eb85eef6b87ef5e10bc"
+    },
+    {
+      "file": "assets/dishes/croquetas-480.webp",
+      "status": 200,
+      "bytes": 33846,
+      "sha256": "91b6a4e624b09ae2f1f67fefb7ce4693e7e4b1fe4a3de9edee847a074cad6822"
+    },
+    {
+      "file": "assets/dishes/crema-coliflor.webp",
+      "status": 200,
+      "bytes": 87794,
+      "sha256": "29f56d85ffd8d9c5de1a3fb83a2d34141eed04d9546c769ab79110cba0076a9d"
+    },
+    {
+      "file": "assets/dishes/croquetas-jamon-480.webp",
+      "status": 200,
+      "bytes": 34598,
+      "sha256": "239bf07c5081117f4deb72fea8075f96395d6e4edb06ad3bf9214cf126ac5ca7"
+    },
+    {
+      "file": "assets/dishes/croquetas-morcilla-480.webp",
+      "status": 200,
+      "bytes": 33852,
+      "sha256": "ad2917602518a0770a8c937dde860adb96a35e242897056aabb20bde81516f60"
+    },
+    {
+      "file": "assets/dishes/croquetas-jamon.webp",
+      "status": 200,
+      "bytes": 135382,
+      "sha256": "06322f685e56eeb66380bd818258e37c34c4c077aad3bf8bd49a09b1b42d0222"
+    },
+    {
+      "file": "assets/dishes/croquetas-morcilla.webp",
+      "status": 200,
+      "bytes": 131350,
+      "sha256": "3e79b541905683a75f8d8258c1919b0f6982613d9cf3e029cf9f36a0b387d4c4"
+    },
+    {
+      "file": "assets/dishes/crujiente-480.webp",
+      "status": 200,
+      "bytes": 35506,
+      "sha256": "5addac8c507a8bee2f757e3f6ecbd516acd3117053a05b3b29d5338dd8f860a8"
+    },
+    {
+      "file": "assets/dishes/croquetas.webp",
+      "status": 200,
+      "bytes": 132362,
+      "sha256": "c0eed22a2f80a3e113b3d9193554fb00c2765ddcd46001c9321bcd364a67cf3c"
+    },
+    {
+      "file": "assets/dishes/dedos-pescado-480.webp",
+      "status": 200,
+      "bytes": 35930,
+      "sha256": "f38f784b7f9c104721582fae8b8f3b2e607d590ed548872feef50792448fd0d9"
+    },
+    {
+      "file": "assets/dishes/crujiente.webp",
+      "status": 200,
+      "bytes": 142168,
+      "sha256": "64f304b2c615c23e1d89ece7cde2ad3ab700194150df6daa650fead216a476f5"
+    },
+    {
+      "file": "assets/dishes/dedos-pescado.webp",
+      "status": 200,
+      "bytes": 136114,
+      "sha256": "b815e01df0739617de585d625032c7be6b500315f807039341d57817303c96c4"
+    },
+    {
+      "file": "assets/dishes/fideua-480.webp",
+      "status": 200,
+      "bytes": 41394,
+      "sha256": "19aeb4d9557be8255b949915ac9b9ec2319616ec74166f4b7ff8319f7f98e5c6"
+    },
+    {
+      "file": "assets/dishes/dedos-pollo-480.webp",
+      "status": 200,
+      "bytes": 37264,
+      "sha256": "c2016a345a25addcddcc468011ce0e6f452931d87442468b7576c41ce52544aa"
+    },
+    {
+      "file": "assets/dishes/dedos-pollo.webp",
+      "status": 200,
+      "bytes": 146724,
+      "sha256": "e70e7a7ce061c65931ed8f75eed91b378a08b37706e9769c3ecc635558bc6861"
+    },
+    {
+      "file": "assets/dishes/fritas-480.webp",
+      "status": 200,
+      "bytes": 33222,
+      "sha256": "9eeeb068411f224b2e873d63504e1c297aacabc3e7fc24df87f2f27ade2e743c"
+    },
+    {
+      "file": "assets/dishes/huevos-camaron-480.webp",
+      "status": 200,
+      "bytes": 39790,
+      "sha256": "76cd43ab301d5ead93dca05693b935ceb6df445d2c003e35259114de7155d7bb"
+    },
+    {
+      "file": "assets/dishes/fritas.webp",
+      "status": 200,
+      "bytes": 139240,
+      "sha256": "f11f34ec54b9e557310debf55202333d42598c21ad9cec05782f90b04d15f3e7"
+    },
+    {
+      "file": "assets/dishes/huevos-480.webp",
+      "status": 200,
+      "bytes": 37586,
+      "sha256": "effe1186937b6e25bb0da732bf34531ec25c58e5c8637cf9c49de8da972cf347"
+    },
+    {
+      "file": "assets/dishes/fideua.webp",
+      "status": 200,
+      "bytes": 155020,
+      "sha256": "849891d42f5c417e824e08db0756ed24695b5c8b855a42ff98a6435aff89c821"
+    },
+    {
+      "file": "assets/dishes/huevos-camaron.webp",
+      "status": 200,
+      "bytes": 164974,
+      "sha256": "ba0ab395c17a2389fbae24490e06e6fe2b32750a70143f732a596b7925945f92"
+    },
+    {
+      "file": "assets/dishes/jamon-serrano-480.webp",
+      "status": 200,
+      "bytes": 32852,
+      "sha256": "e2dae0b02e6ed37b814716c560d88585785616d82233f6088dafbc24a5cfe57d"
+    },
+    {
+      "file": "assets/dishes/manchego-padron-480.webp",
+      "status": 200,
+      "bytes": 31416,
+      "sha256": "1b8970ae5574df9639cefd5439708187444effe620c6d5767ded2f29bb7e958c"
+    },
+    {
+      "file": "assets/dishes/huevos.webp",
+      "status": 200,
+      "bytes": 148204,
+      "sha256": "4e6c217608551ca3768558ae7b6b9800f0d11f565ae64ff737abf4b845a0cc26"
+    },
+    {
+      "file": "assets/dishes/jamon-serrano.webp",
+      "status": 200,
+      "bytes": 137752,
+      "sha256": "c66d0477db71a519d122565c6bfb3745e568c448d246450aef2e1c867c5b0850"
+    },
+    {
+      "file": "assets/dishes/manchego-padron.webp",
+      "status": 200,
+      "bytes": 133272,
+      "sha256": "18ff202492362a12addb7d3c01e0b430dcd995ea70eb7d2c91d48fe52255988f"
+    },
+    {
+      "file": "assets/dishes/manchego-serrano-480.webp",
+      "status": 200,
+      "bytes": 30170,
+      "sha256": "80305f43fd59c330fe38ad16828812dbd7e48a2360c63b6a34c9bdb4b71efca4"
+    },
+    {
+      "file": "assets/dishes/morcilla-cebolla-480.webp",
+      "status": 200,
+      "bytes": 33672,
+      "sha256": "21345cf429c7a3da3b709d31c8ae71292436dd0feab0eda2c8e8502fe5a9e63b"
+    },
+    {
+      "file": "assets/dishes/misu-480.webp",
+      "status": 200,
+      "bytes": 27198,
+      "sha256": "afa3c8eeaa7e3d8a2d98b1ce72e9dfddbdd1cd69dc12c6c0413a3aae7259762a"
+    },
+    {
+      "file": "assets/dishes/manchego-serrano.webp",
+      "status": 200,
+      "bytes": 119252,
+      "sha256": "d68535141c00cb6d940f49cbf75656991d184f411c719fc23a327cdb21916439"
+    },
+    {
+      "file": "assets/dishes/misu.webp",
+      "status": 200,
+      "bytes": 104560,
+      "sha256": "a07e732e95105678aead840eac931717183e667cb03478fb63d785681f799bbc"
+    },
+    {
+      "file": "assets/dishes/mousse-480.webp",
+      "status": 200,
+      "bytes": 31340,
+      "sha256": "8e9ef1510dd7a2016686c9eb8aac80db26d7ffbfa90edc3ff3970c3164c2b1c0"
+    },
+    {
+      "file": "assets/dishes/morcilla-cebolla.webp",
+      "status": 200,
+      "bytes": 128954,
+      "sha256": "77042911e9cb38d4eb12d4f700da7cfe238bad25b8c8ab830f43fd022b85edd2"
+    },
+    {
+      "file": "assets/dishes/mousse.webp",
+      "status": 200,
+      "bytes": 129644,
+      "sha256": "9ea4597dd7fdf242c1598b02711fdd6da13f329ab762034649c7f565321358fb"
+    },
+    {
+      "file": "assets/dishes/padron-480.webp",
+      "status": 200,
+      "bytes": 38660,
+      "sha256": "564602996ed707e4cc1fd6ecd1b1b5bfa5ec1586ee878395d632976bb12263db"
+    },
+    {
+      "file": "assets/dishes/pan-tumaca-480.webp",
+      "status": 200,
+      "bytes": 37530,
+      "sha256": "92dde60097d10e26bb63dbc31968a70aacc7a74bf849297e54e108e2457bff8d"
+    },
+    {
+      "file": "assets/dishes/padron.webp",
+      "status": 200,
+      "bytes": 145686,
+      "sha256": "322a305577ca624d919d36f9ac25703a141edc601051abfe16c590b36d31b77f"
+    },
+    {
+      "file": "assets/dishes/pan-tumaca.webp",
+      "status": 200,
+      "bytes": 139948,
+      "sha256": "2e085d8e8cdac5310d7cb91829e56a8026850dc556a891e07ce75aaecef5986e"
+    },
+    {
+      "file": "assets/dishes/parrilla-480.webp",
+      "status": 200,
+      "bytes": 53590,
+      "sha256": "8299e663ffafee7b1f064ac297280c57563b950c40e2b3b2d83747e338be0265"
+    },
+    {
+      "file": "assets/dishes/peques-cheese-480.webp",
+      "status": 200,
+      "bytes": 21856,
+      "sha256": "cd560c8b3670e9a683376c9e9098b04ddee9296ebf81eb558e10e59104a6a009"
+    },
+    {
+      "file": "assets/dishes/pesca-480.webp",
+      "status": 200,
+      "bytes": 37394,
+      "sha256": "1d4704f7e7cb3e257e79fe9c7cc672a61ecd5bbdc248e1b2309c4a4bf4f99c89"
+    },
+    {
+      "file": "assets/dishes/peques-cheese.webp",
+      "status": 200,
+      "bytes": 81260,
+      "sha256": "565058959471a0335d46fd450bb61c57111531fc463206782f43cadb9da43f6b"
+    },
+    {
+      "file": "assets/dishes/parrilla.webp",
+      "status": 200,
+      "bytes": 215862,
+      "sha256": "215f50c21a1010e5df59b11a6143b4d25deb4a4149ddd1ae79f00c268e5109f3"
+    },
+    {
+      "file": "assets/dishes/pesca.webp",
+      "status": 200,
+      "bytes": 146326,
+      "sha256": "a459b6d126d6d6a6da2d9ecc5991fc0818355cc1cd773ee9f66dcf29e9f01e8e"
+    },
+    {
+      "file": "assets/dishes/pollo-480.webp",
+      "status": 200,
+      "bytes": 47704,
+      "sha256": "d2c944b1ac40f3facf0e7ebf047e1a4ea68004f9db909d96416848d301985eb1"
+    },
+    {
+      "file": "assets/dishes/pulpo-queso-480.webp",
+      "status": 200,
+      "bytes": 31204,
+      "sha256": "f555ffb84b01e060d441c34c9bd188eee8f6d7b00f0b7a8080fd4d3459d65f87"
+    },
+    {
+      "file": "assets/dishes/piquillo.webp",
+      "status": 200,
+      "bytes": 117012,
+      "sha256": "7f88a8421aa619127a874186424f6b3c831c8d2954f87ef3a1bf037dc83e2af8"
+    },
+    {
+      "file": "assets/dishes/piquillo-480.webp",
+      "status": 200,
+      "bytes": 29816,
+      "sha256": "01d5bc0386576117e75426afab4b7d0f76978f32c53eadc8f33ca420880729c8"
+    },
+    {
+      "file": "assets/dishes/pollo.webp",
+      "status": 200,
+      "bytes": 193552,
+      "sha256": "fd27c8bfd790a748ec429b068c4ea611cddf7a8cbf0b35f6ff4f4254f71052a6"
+    },
+    {
+      "file": "assets/dishes/pulpo-queso.webp",
+      "status": 200,
+      "bytes": 118410,
+      "sha256": "d60a8edd3d1b7d0726ea965e7428f5f35d1281e5dc6b6537ca5663c0cefc64f2"
+    },
+    {
+      "file": "assets/dishes/solomillo-480.webp",
+      "status": 200,
+      "bytes": 34330,
+      "sha256": "c57e0b1fc3ca55cf306a7c7da7f892805950d2da8b96bf3ddb577ae14d67461c"
+    },
+    {
+      "file": "assets/dishes/serrano-pate-mango-480.webp",
+      "status": 200,
+      "bytes": 29852,
+      "sha256": "dcd4181b4a220a0001806355632c80bc24650721626b814b78383eb98ea58d7a"
+    },
+    {
+      "file": "assets/dishes/surimi-480.webp",
+      "status": 200,
+      "bytes": 31960,
+      "sha256": "eafbb103ee2cb765aeb4b3b8c0851957d2ace7eac88165f40d88ea010facd892"
+    },
+    {
+      "file": "assets/dishes/serrano-pate-mango.webp",
+      "status": 200,
+      "bytes": 116884,
+      "sha256": "0b745b57be8f67aef76c6a58c93d413ec14b7f15bfbc1765d0701f8e2193a5c0"
+    },
+    {
+      "file": "assets/dishes/solomillo.webp",
+      "status": 200,
+      "bytes": 138204,
+      "sha256": "da23d2fd132bc7dea99ad2559061f56d3cc9e571f086e423f3d35fa143e76128"
+    },
+    {
+      "file": "assets/dishes/tortilla-480.webp",
+      "status": 200,
+      "bytes": 35560,
+      "sha256": "1340cee186a781b9bd52dfaf032de08d5834e3745e1cf59c0ba9fe628c116a3e"
+    },
+    {
+      "file": "assets/dishes/surimi.webp",
+      "status": 200,
+      "bytes": 124446,
+      "sha256": "a83a5b1363944dbfc1d29a71e29afe50adbc773272f0964f6a573db44922d6bf"
+    },
+    {
+      "file": "assets/dishes/tabla-480.webp",
+      "status": 200,
+      "bytes": 36424,
+      "sha256": "50a3043a174259ddbcbdedc67f6e22ffa446ebc8ada021a5c20e6e9b3186b7b4"
+    },
+    {
+      "file": "assets/dishes/tabla.webp",
+      "status": 200,
+      "bytes": 135556,
+      "sha256": "addb8f18bf6236d9109cab7fb0b0d1058e40b5c5cf58c6483120c4c7be6be3a6"
+    },
+    {
+      "file": "assets/dishes/tortilla.webp",
+      "status": 200,
+      "bytes": 141458,
+      "sha256": "a1d757f07fff28334bd2a463236b0f4e7a60ef4e6f224b497cc47469778981bd"
+    },
+    {
+      "file": "assets/fachada-tinglao.jpg",
+      "status": 200,
+      "bytes": 32993,
+      "sha256": "e92220e20a92c6eb9ec6afbd7d7e416361805a518a7ab60ecead806cbab308f7"
+    },
+    {
+      "file": "assets/fonts/manrope-normal.woff2",
+      "status": 200,
+      "bytes": 24576,
+      "sha256": "e310b55a7fd9677f5e3555e6c6c4d064fa1f1d24393f0ddbe217cea12a8c432f"
+    },
+    {
+      "file": "assets/fonts/cormorant-italic.woff2",
+      "status": 200,
+      "bytes": 39304,
+      "sha256": "e6d6d1d73858aa9b66f3a3539f9dec22faab2276e61ad1d813bc04dd59c9c122"
+    },
+    {
+      "file": "assets/fonts/cormorant-normal.woff2",
+      "status": 200,
+      "bytes": 37776,
+      "sha256": "5d618c462b7a5b74f442e1548880086af71764d9cc7d35c16ab45353da934621"
+    },
+    {
+      "file": "assets/pulpo-gallega.jpg",
+      "status": 200,
+      "bytes": 46300,
+      "sha256": "0c7ea9378c8c35c4c522b4eddd358b304966688fbf9f86a622871cbe86d3e684"
+    },
+    {
+      "file": "assets/tarta-vasca.jpg",
+      "status": 200,
+      "bytes": 38082,
+      "sha256": "e5b0dd2b258c84b4f8df4a983c3b6d6d0f4f8ea58a1ebac5a321b7d5d4258a96"
+    },
+    {
+      "file": "assets/terraza-tinglao.jpg",
+      "status": 200,
+      "bytes": 35005,
+      "sha256": "b01ba022166fd9ac9c53d1e32297cf6518f0d5ea5b7bcced3c6d5dff7eb0482b"
+    },
+    {
+      "file": "/",
+      "status": 200
+    },
+    {
+      "file": "?utm_source=whatsapp&utm_campaign=tinglao",
+      "status": 200
+    },
+    {
+      "file": "?fbclid=demo-verification",
+      "status": 200
+    }
+  ],
+  "notFoundStatus": 404
+}

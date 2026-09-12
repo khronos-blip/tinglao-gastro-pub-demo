@@ -17,3 +17,107 @@
 @media(max-width:380px){.hero h1{font-size:67px}.hero-photo{height:285px}.section-head h2{font-size:51px}}
 .tag{font-size:9px}.photo-origin{font-size:8px}.add-btn{min-width:44px;min-height:44px}
 @media(max-width:680px){.product-body .tag{font-size:8px}.photo-origin{font-size:7px}.imagery-note{font-size:9px}.qty button{width:40px;height:40px}.section-head .eyebrow{font-size:9px}}
+
+/* Liquid Glass accents: translucent navigation above the editorial content. */
+:root{
+  --glass-edge:rgba(255,255,255,.72);
+  --glass-shadow:0 8px 26px rgba(16,39,31,.09),inset 0 1px 0 rgba(255,255,255,.85),inset 0 -1px 0 rgba(16,39,31,.06);
+  --glass-light:#f7f6ee;
+  --glass-dark:#18382b;
+}
+.site-head{
+  background:var(--glass-dark);
+  border-bottom-color:rgba(237,245,226,.2);
+  box-shadow:0 8px 28px #071d1612,inset 0 1px 0 #ffffff12;
+}
+.btn,.chip,.search input{border-radius:999px}
+.btn{
+  box-shadow:inset 0 1px 0 #ffffff55,inset 0 -1px 0 #10271f14,0 4px 12px #10271f0a;
+  transition:background .25s,transform .25s,color .25s,box-shadow .25s;
+}
+.btn-dark,.site-head .btn-dark,.drawer-foot .btn-primary{
+  background:linear-gradient(160deg,#ffffff20,transparent 48%,#020e091a),var(--green);
+  border-color:#ffffff30;
+}
+.btn-primary{
+  background:linear-gradient(145deg,#ffffffc9,transparent 58%,#d4dfcc45),var(--cream);
+  border-color:#ffffffb3;
+}
+.site-head .btn-outline{
+  background:linear-gradient(150deg,#ffffff24,#ffffff08 55%,#ffffff14);
+  border-color:#ffffff45;
+}
+.btn-outline,.btn-ghost{background:linear-gradient(155deg,#ffffff80,#ffffff10);border-color:#bac5b3}
+.btn:hover{box-shadow:inset 0 1px 0 #ffffff80,0 8px 20px #10271f20}
+.hero-actions .text-link{border:1px solid #ffffff35;border-radius:999px;padding:13px 19px;background:linear-gradient(145deg,#ffffff14,#ffffff03);box-shadow:inset 0 1px 0 #ffffff19}
+.category-wrap{
+  top:calc(var(--demo-height) + var(--header-height) + 9px);
+  padding:9px;
+  gap:16px;
+  border:1px solid var(--glass-edge);
+  border-radius:28px;
+  background:var(--glass-light);
+  box-shadow:var(--glass-shadow);
+}
+.chip{color:#4a5949}
+.chip.active{background:linear-gradient(150deg,#ffffff21,transparent 60%),var(--green);box-shadow:0 3px 9px #10271f24,inset 0 1px 0 #ffffff55;border-color:#ffffff2b}
+.search input{background:#ffffff66;border-color:#aebba44d;box-shadow:inset 0 1px 3px #10271f09}
+.photo-origin{
+  border-radius:999px;
+  border:1px solid #ffffffa6;
+  padding:4px 8px;
+  background:linear-gradient(145deg,#ffffffee,#f4f1e9db);
+  box-shadow:0 2px 8px #061d1826,inset 0 1px 0 #ffffff;
+}
+.add-btn,.icon-btn{
+  border-color:#b9c6b199;
+  background:linear-gradient(145deg,#ffffffd6,#ffffff36 60%,#dce4d04d);
+  box-shadow:inset 0 1px 0 #ffffff,0 3px 9px #10271f0b;
+}
+.icon-btn:hover{background:#e7edde}
+.hero-secondary{border:1px solid #ffffff40;padding:6px 6px 10px;border-radius:19px;background:linear-gradient(145deg,#365344d9,#19362adc);box-shadow:0 10px 28px #061a1640,inset 0 1px 0 #ffffff40}
+.hero-secondary img{border-radius:13px}
+.modal{
+  background:var(--glass-light);
+  border:1px solid var(--glass-edge);
+  border-radius:28px;
+  box-shadow:0 24px 90px #061a1652,inset 0 1px 0 #ffffff;
+}
+.drawer{background:var(--glass-light);border:1px solid var(--glass-edge);border-right:0;border-radius:28px 0 0 28px;box-shadow:-16px 0 60px #061a1633,inset 0 1px 0 #ffffff}
+.drawer-head,.modal-head{background:linear-gradient(130deg,#ffffff70,#ffffff0a);border-bottom-color:#b6c2ad50}
+.drawer-foot{background:#f0f3e9e6;border-top-color:#ffffffc9;box-shadow:0 -8px 22px #10271f07,inset 0 1px 0 #ffffff}
+.field input,.field select,.field textarea{border-radius:12px;background:#fffdf7e6;box-shadow:inset 0 1px 2px #10271f06}
+.qty{border-radius:999px;background:#ffffff80;box-shadow:inset 0 1px 0 #ffffff;border-color:#b9c6b180;overflow:hidden}
+.preview,.notice{border-radius:16px}
+.toast{background:var(--glass-dark);border:1px solid #ffffff5c;border-radius:999px;box-shadow:0 10px 30px #061a1640,inset 0 1px 0 #ffffff40}
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .site-head,.toast{background:linear-gradient(130deg,#ffffff0d,transparent 55%),rgba(16,39,31,.84);-webkit-backdrop-filter:blur(24px) saturate(150%);backdrop-filter:blur(24px) saturate(150%)}
+  .category-wrap,.mobile-dock{background:linear-gradient(130deg,#ffffff73,#ffffff0d 60%),rgba(244,241,233,.83);-webkit-backdrop-filter:blur(22px) saturate(145%);backdrop-filter:blur(22px) saturate(145%)}
+  .modal,.drawer{background:linear-gradient(140deg,#ffffff40,transparent 55%),rgba(247,246,238,.94);-webkit-backdrop-filter:blur(28px) saturate(125%);backdrop-filter:blur(28px) saturate(125%)}
+}
+@media(max-width:680px){
+  .category-wrap{padding:8px;gap:8px;border-radius:25px}
+  .chip{padding:10px 12px}
+  .hero-actions{gap:14px}
+  .hero-actions .text-link{padding:13px 16px}
+  .photo-origin{padding:3px 6px}
+  .mobile-dock{
+    left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));
+    padding:7px;gap:7px;border:1px solid var(--glass-edge);border-radius:999px;
+    box-shadow:0 10px 35px #10271f26,inset 0 1px 0 #ffffff,inset 0 -1px 0 #10271f0a;
+  }
+  .mobile-dock button{min-height:48px;gap:10px;border-radius:999px;border-color:#bac5b366;background:linear-gradient(150deg,#ffffffbf,#ffffff33);box-shadow:inset 0 1px 0 #ffffff80}
+  .mobile-dock button+button{background:linear-gradient(150deg,#ffffff26,transparent 60%),var(--green);border-color:#ffffff30;box-shadow:0 3px 8px #10271f29,inset 0 1px 0 #ffffff55}
+  .toast{bottom:calc(90px + env(safe-area-inset-bottom))}
+  .footer{padding-bottom:calc(120px + env(safe-area-inset-bottom))}
+  .drawer{border-radius:24px 24px 0 0;border-right:1px solid var(--glass-edge)}
+  .modal{border-radius:24px}
+  .drawer-foot{padding-bottom:max(20px,env(safe-area-inset-bottom))}
+}
+@media(prefers-reduced-transparency:reduce),(prefers-contrast:more){
+  .site-head,.toast{background:var(--glass-dark)}
+  .category-wrap,.mobile-dock,.modal,.drawer,.drawer-foot{background:var(--glass-light)}
+  .site-head,.toast,.category-wrap,.mobile-dock,.modal,.drawer,.overlay{-webkit-backdrop-filter:none;backdrop-filter:none}
+  .photo-origin{background:var(--paper)}
+  .category-wrap,.mobile-dock,.modal,.drawer{border-color:#829575}
+}

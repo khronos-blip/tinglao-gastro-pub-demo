@@ -11,3 +11,9 @@ Validación pública: 85 comprobaciones en Chromium y 85 en WebKit; 118 verifica
 La prueba se ejecutó desde España. No constituye una comprobación de cada operador o dispositivo en Venezuela. No se configuró ninguna restricción geográfica de acceso.
 
 Reservas y pedidos son simulados; no se envían datos ni se procesan pagos. Los precios de referencia y nombres originales se conservan. Las imágenes generadas son ilustrativas y así se identifican.
+
+## Detalles Liquid Glass
+
+Actualización del 12 de septiembre: controles con bordes luminosos y reflejos suaves, navegación/filtros translúcidos, barra flotante en móvil y formularios con acabado de cristal. Inspiración: https://developer.apple.com/design/human-interface-guidelines/materials. Implementación CSS, con fondos sólidos de respaldo y adaptación a las preferencias de contraste/transparencia.
+
+Versión Cloudflare: `65ca3f17-3033-47bb-ba3c-b005b4a493c0`. Las 85 comprobaciones existentes pasaron en Chromium y WebKit. Se revisaron además los anchos 320 y 360 px. Evidencia en `qa/liquid-glass/`.

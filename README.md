@@ -8,7 +8,7 @@ Demo conceptual y no oficial para Tinglao Gastro Pub, Valencia (Venezuela). No e
 
 ## Experiencia
 
-- Dirección visual premium en verde nocturno, marfil y cobre. Cormorant Garamond y Manrope alojadas localmente, iconos SVG uniformes (sin emojis), portada editorial y carta fotográfica adaptable.
+- Dirección visual premium en verde nocturno, marfil y cobre. Cormorant Garamond y Manrope alojadas localmente, iconos SVG uniformes (sin emojis), portada editorial y carta fotográfica adaptable. Detalles inspirados en Liquid Glass: navegación y filtros translúcidos, controles con reflejos y barra flotante en móvil; fondos sólidos cuando se solicita más contraste o menos transparencia.
 - Carta digital con **113 opciones en 22 secciones**, transcritas de las dos páginas de `menu-oficial.pdf`. Selección inicial de 12 platos, categorías y búsqueda global que ignora tildes.
 - Los importes están en EUR como en el PDF. Son precios de referencia del documento, sin afirmar vigencia o disponibilidad.
 - Los 53 platos tienen imagen: pulpo y tarta conservan sus fotografías originales; los 51 restantes usan 50 imágenes de IA creadas individualmente, compartiendo únicamente Chicken Burger entre carta y menú peques. Se presentan como ilustrativas, sin atribuir recetas, ingredientes o emplatados al restaurante. Las bebidas conservan su presentación textual.
