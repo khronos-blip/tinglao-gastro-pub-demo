@@ -185,7 +185,7 @@
     const q=e.target.closest('[data-qty]');if(q){readOrderState();const id=q.dataset.qty,delta=Number(q.dataset.delta);cart[id]=Math.max(0,Math.min(20,(cart[id]||0)+delta));if(!cart[id])delete cart[id];save();(document.querySelector(`[data-qty="${id}"][data-delta="${delta}"]:not(:disabled)`)||document.querySelector(`[data-qty="${id}"]:not(:disabled)`)||$('#cartDrawer [data-close]')).focus();}
     const quick=e.target.closest('[data-add]');if(quick)add(quick.dataset.add);
     const detailAdd=e.target.closest('#addDetail');if(detailAdd){const n=Number($('#detailQty').value);if(!Number.isInteger(n)||n<1||n>20){$('#detailError').textContent='Elige una cantidad entera entre 1 y 20.';$('#detailQty').focus();return;}add(detailAdd.dataset.id,n,true);}
-    const chip=e.target.closest('.chip');if(chip){$$('.chip').forEach(x=>{x.classList.toggle('active',x===chip);x.setAttribute('aria-pressed',String(x===chip));});filter=chip.dataset.filter;$('#search').value='';setSearchOpen(false,{focus:false});renderProducts();if(compactNavigation.matches){chip.scrollIntoView({block:'nearest',inline:'nearest'});$('.catalog-meta').scrollIntoView({block:'start',behavior:'instant'});}}
+    const chip=e.target.closest('.chip');if(chip){$$('.chip').forEach(x=>{x.classList.toggle('active',x===chip);x.setAttribute('aria-pressed',String(x===chip));});filter=chip.dataset.filter;$('#search').value='';setSearchOpen(false,{focus:false});renderProducts();}
     if(e.target.closest('#clearSearch')){$('#search').value='';$$('.chip')[0].click();if(compactNavigation.matches)$$('.chip')[0].focus({preventScroll:true});else $('#search').focus();}
   });
   document.addEventListener('keydown',e=>{
@@ -199,7 +199,7 @@
     }
   });
   document.addEventListener('input',e=>{if(e.target.id==='detailQty'){const n=Number(e.target.value),id=$('#addDetail').dataset.id;$('#addDetail span').textContent=euro(byId[id].price*(Number.isInteger(n)&&n>0?n:1));}});
-  $('#search').addEventListener('input',()=>{renderProducts();if(compactNavigation.matches)$('.catalog-meta').scrollIntoView({block:'start',behavior:'instant'});});
+  $('#search').addEventListener('input',renderProducts);
   $('#checkoutBtn').addEventListener('click',()=>{if(orderStage==='form'&&$('#orderForm')){$('#orderForm').requestSubmit();return;}readOrderState();checkoutForm();$('#orderForm input')?.focus();});
   $('#reservationForm').addEventListener('submit',reservationSubmit);
   $('#rDate').min=localDate();reservationSteps(1);

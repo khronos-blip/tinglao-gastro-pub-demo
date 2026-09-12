@@ -12,8 +12,14 @@ page.on('pageerror',e=>errors.push(e.message));
 try{
  await page.goto(base);await page.evaluate(()=>document.fonts.ready);
  check('Beverages is the single and final drinks category',await page.locator('[data-filter="cocteles"]').count()===0&&await page.locator('.chip').last().getAttribute('data-filter')==='bebidas');
+ await page.evaluate(()=>{document.documentElement.style.scrollBehavior='auto';window.scrollTo(0,Math.max(0,document.querySelector('.category-wrap').offsetTop-360));});
+ const barBefore=await page.locator('.category-wrap').evaluate(n=>n.getBoundingClientRect().top);
+ await page.locator('[data-filter="tapas"]').dispatchEvent('click');
+ const barAfter=await page.locator('.category-wrap').evaluate(n=>n.getBoundingClientRect().top);
+ check('Changing category keeps the menu bar in place',Math.abs(barAfter-barBefore)<2);
+ await page.evaluate(()=>window.scrollTo(0,0));
  for(const width of [320,360,390,430,768]){
-  await page.setViewportSize({width,height:844});await page.locator('[data-filter="tapas"]').click();
+  await page.setViewportSize({width,height:844});await page.evaluate(()=>window.scrollTo(0,document.querySelector('.category-wrap').offsetTop));await page.locator('[data-filter="tapas"]').dispatchEvent('click');
   const geometry=await page.evaluate(()=>({header:document.querySelector('.site-head').getBoundingClientRect().toJSON(),bar:document.querySelector('.category-wrap').getBoundingClientRect().toJSON(),width:document.documentElement.scrollWidth}));
   check(`Compact upper controls at ${width}`,geometry.header.top===0&&geometry.bar.bottom<=120&&geometry.width<=width);
   check(`No lower toolbar at ${width}`,await page.locator('.mobile-dock').count()===0);
