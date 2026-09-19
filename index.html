@@ -2,51 +2,36 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#10271f">
-  <meta name="description" content="Descubre la carta de Tinglao Gastro Pub y prueba pedidos y reservas en esta demo conceptual no oficial, sin operaciones reales.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow, noarchive">
-  <title>Tinglao · Tapas, vino y jaleo | Demo</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preload" href="assets/fonts/cormorant-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/manrope-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <script src="menu.js" defer></script>
-  <script src="media.js" defer></script>
-  <script src="app.js" defer></script>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="Demo privada de Gviso Web. Solicita acceso directo por WhatsApp.">
+  <title>Demo no disponible · Gviso Web</title>
+  <style>
+    :root { color-scheme: dark; --ink:#f4f4f2; --muted:#a6acb8; --amber:#f2a93b; --blue:#377dff; }
+    * { box-sizing: border-box; }
+    body { margin:0; min-height:100svh; display:grid; place-items:center; padding:24px; overflow:hidden; background:#090b10; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    body::before { content:""; position:fixed; inset:-30%; background:radial-gradient(circle at 35% 30%,rgba(55,125,255,.18),transparent 28%),radial-gradient(circle at 70% 65%,rgba(242,169,59,.14),transparent 28%); filter:blur(20px); pointer-events:none; }
+    main { position:relative; width:min(100%,680px); padding:clamp(34px,7vw,68px); border:1px solid rgba(255,255,255,.12); border-radius:28px; background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025)); box-shadow:0 28px 90px rgba(0,0,0,.42); text-align:center; backdrop-filter:blur(16px); }
+    .mark { display:inline-grid; place-items:center; width:64px; height:64px; margin-bottom:28px; border-radius:19px; color:#090b10; font-weight:900; letter-spacing:-.08em; font-size:24px; background:linear-gradient(135deg,var(--amber),#ffd899 52%,var(--blue)); box-shadow:0 12px 38px rgba(242,169,59,.2); }
+    .eyebrow { margin:0 0 14px; color:var(--amber); font-size:12px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; }
+    h1 { margin:0; font-size:clamp(34px,7vw,62px); line-height:.98; letter-spacing:-.055em; }
+    p { max-width:500px; margin:24px auto 32px; color:var(--muted); font-size:clamp(17px,2.8vw,20px); line-height:1.55; }
+    a { display:inline-flex; align-items:center; justify-content:center; min-height:54px; padding:0 24px; border-radius:999px; color:#0a0c10; background:var(--ink); font-weight:800; text-decoration:none; transition:transform .2s ease,background .2s ease; }
+    a:hover { transform:translateY(-2px); background:#fff; }
+    a:focus-visible { outline:3px solid var(--amber); outline-offset:4px; }
+    footer { margin-top:30px; color:#6f7682; font-size:13px; }
+    @media (prefers-reduced-motion:reduce) { a { transition:none; } }
+  </style>
 </head>
 <body>
-<svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><symbol id="icon-arrow-up-right" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol><symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol><symbol id="icon-arrow-down" viewBox="0 0 24 24"><path d="M12 4v16m-6-6 6 6 6-6"/></symbol><symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol><symbol id="icon-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol><symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol><symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol><symbol id="icon-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol><symbol id="icon-document" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8l-5-5Z M14 3v6h5 M8 13h8m-8 4h6"/></symbol><symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></symbol><symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></symbol><symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></symbol><symbol id="icon-bag" viewBox="0 0 24 24"><path d="M5 7h14l1 14H4L5 7Z M9 8V6a3 3 0 0 1 6 0v2"/></symbol></defs></svg>
-<a class="skip" href="#catalogo">Saltar a la carta</a>
-<div class="demo-bar">DEMO NO OFICIAL <span aria-hidden="true">·</span> Pedidos y reservas simulados</div>
-<header class="site-head">
-  <a class="brand" href="#inicio" aria-label="Tinglao Gastro Pub, inicio"><strong>TINGLAO</strong><small>GASTRO PUB<span class="head-demo"> · DEMO</span></small></a>
-  <nav class="main-nav" aria-label="Navegación principal"><a href="#catalogo">La carta</a><a href="#ambiente">El ambiente</a><button data-open="reservation">Reservas</button></nav>
-  <div class="head-actions"><button class="btn btn-outline reserve-head" data-open="reservation"><span>Reservar<span class="reserve-long"> mesa</span></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-calendar"></use></svg></button><button class="btn btn-dark cart-btn" data-open="cart" aria-label="Abrir pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14l1 13H4L5 7Z M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-label">Mi pedido</span><span class="cart-count" id="cartCount">0</span></button></div>
-</header>
-<main id="inicio">
-  <section class="hero" aria-labelledby="hero-title"><div class="hero-inner">
-    <div class="hero-copy"><span class="eyebrow">VALENCIA, VENEZUELA · GASTRO PUB</span><h1 id="hero-title">El placer<br>de <em>quedarte.</em></h1><p>La primera tapa. Una buena conversación.<br>Ese momento en el que no miras la hora.</p><div class="hero-actions"><a class="btn btn-primary" href="#catalogo">Descubrir la carta <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a><button class="text-link" data-open="reservation">Reservar mesa <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></button></div><div class="hero-signature"><span class="signature-rule"></span><span>Tapas, vino & jaleo.<br><strong>Esto es Tinglao.</strong></span></div></div>
-    <div class="hero-art"><div class="hero-photo"><img id="heroDish" src="assets/dishes/fideua.webp" srcset="assets/dishes/fideua-480.webp 480w, assets/dishes/fideua.webp 960w" sizes="(max-width:680px) 85vw, 45vw" alt="Fideuá" width="960" height="960" fetchpriority="high"><div class="photo-caption"><strong id="heroPhotoName">Fideuá</strong></div></div><figure class="hero-secondary"><img src="assets/tarta-vasca.jpg" alt="Tarta vasca de Tinglao" width="640" height="640"><figcaption>Un final <em>dulce.</em></figcaption></figure></div>
-  </div></section>
-  <div class="table-note"><span>COCINA CON CARÁCTER</span><span>Una mesa. Buena compañía. Ninguna prisa.</span><a href="#catalogo">La carta <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-arrow-down"></use></svg></a></div>
-  <section class="shop" id="catalogo" aria-labelledby="catalog-title">
-    <div class="section-head"><div><span class="eyebrow">LA CARTA DE TINGLAO</span><h2 id="catalog-title">Todo empieza con<br><em>un antojo.</em></h2></div><p>Pequeños bocados. Grandes sobremesas.<br> Encuentra lo que hoy te apetece compartir.</p></div>
-    <div class="category-wrap"><nav class="categories" aria-label="Filtrar la carta"><button class="chip active" data-filter="seleccion" aria-pressed="true">La selección</button><button class="chip" data-filter="tapas" aria-pressed="false">Pintxos y tapas</button><button class="chip" data-filter="platos" aria-pressed="false">Platos</button><button class="chip" data-filter="postres" aria-pressed="false">Postres</button><button class="chip" data-filter="bebidas" aria-pressed="false">Bebidas</button></nav><label class="search" id="catalogSearch"><span class="sr-only">Buscar en toda la carta</span><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><input id="search" type="search" placeholder="Busca tu antojo…" autocomplete="off"></label><button type="button" class="search-toggle icon-btn" id="searchToggle" aria-label="Buscar en la carta" aria-expanded="false" aria-controls="catalogSearch"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-search"></use></svg></button></div>
-    <div class="catalog-meta"><span id="resultCount" role="status">Una selección de la carta</span><span>Precios de referencia · Carta oficial</span></div>
-    <div class="product-grid" id="productGrid" aria-live="polite"></div>
-    <div id="menuGroups"></div>
-    <div class="full-menu"><div class="menu-pdf-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-document"></use></svg></div><div><h3>Para leerla sin prisa.</h3><p>También puedes consultar el PDF original de Tinglao.</p></div><a class="btn btn-outline" href="menu-oficial.pdf" target="_blank" rel="noopener">Ver carta oficial <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></div>
-  </section>
-  <section class="experience" id="ambiente" aria-labelledby="experience-title"><div class="experience-inner"><div class="venue-photo"><img src="assets/fachada-tinglao.jpg" alt="Letrero de Tinglao Gastro Pub iluminado de noche" width="640" height="640" loading="lazy"><span>ESTO ES TINGLAO.</span></div><div class="experience-copy"><span class="eyebrow">LA SOBREMESA ES PARTE DEL PLAN</span><h2 id="experience-title">Hay lugares.<br>Y luego está <em>Tinglao.</em></h2><p>Un encuentro alrededor de la mesa. La terraza, la música, las copas. Y una noche que merece alargarse.</p><div class="claim-list" aria-label="Ambiente"><span>Terraza</span><span>Música en vivo</span><span>Flamenco</span><span>Karaoke</span><span>DJ sessions</span></div><button class="btn btn-primary" data-open="reservation">Hagamos un plan <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></button><small class="experience-note">Prueba una reserva. No se envía al restaurante.</small></div></div></section>
-  <section class="proposal" aria-labelledby="proposal-title"><div><span class="eyebrow">UNA PROPUESTA DE GVISO WEB</span><h2 id="proposal-title">Una experiencia a la altura<br><em>de tu restaurante.</em></h2><p>Esta es una demo conceptual. Hablemos de la web oficial de Tinglao.</p></div><a class="btn btn-dark" href="https://wa.me/34684249067?text=Hola%20Gustavo%2C%20vi%20la%20demo%20de%20Tinglao" target="_blank" rel="noopener">Hablar con Gustavo <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></a></section>
-</main>
-<footer class="footer"><a class="brand" href="#inicio"><strong>TINGLAO</strong><small>GASTRO PUB</small></a><p>Tapas. Vino. Jaleo.</p><div class="footer-bottom"><span>Demo conceptual no oficial · Sin afiliación con Tinglao</span><span>No se envían pedidos, reservas ni pagos.</span><a href="ASSET-NOTICE.md">Aviso sobre activos</a></div></footer>
-<div id="toast" class="toast" role="status"></div>
-<div class="overlay" id="overlay" data-close aria-hidden="true"></div>
-<aside class="drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true"><div class="drawer-head"><h2 id="cartTitle">Tu pedido</h2><button class="icon-btn" data-close aria-label="Cerrar carrito"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-close"></use></svg></button></div><div class="drawer-body"><div id="cartItems"></div><div id="checkout"></div></div><div class="drawer-foot"><div class="total"><span>Subtotal</span><span id="subtotal">0,00 €</span></div><p class="subtotal-note">Importes de referencia · Sin pagos ni envíos reales</p><button class="btn btn-dark" id="checkoutBtn" style="width:100%">Continuar pedido</button></div></aside>
-<div class="modal" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailTitle" aria-hidden="true"><div class="modal-head"><h2>Detalle</h2><button class="icon-btn" data-close aria-label="Cerrar detalle"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-close"></use></svg></button></div><div class="modal-body" id="detailBody"></div></div>
-<div class="modal" id="reservationModal" role="dialog" aria-modal="true" aria-labelledby="reservationTitle" aria-hidden="true"><div class="modal-head"><h2 id="reservationTitle">Reservar mesa</h2><button class="icon-btn" data-close aria-label="Cerrar reserva"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-close"></use></svg></button></div><div class="modal-body"><ol class="reservation-steps" id="reservationSteps" aria-label="Pasos de la reserva"></ol><div class="notice">Prueba la experiencia con datos ficticios. No se reserva una mesa ni se envía información al restaurante.</div><form id="reservationForm" novalidate><div class="form-grid"><div class="field"><label for="rDate">Fecha</label><input id="rDate" name="date" type="date" required></div><div class="field"><label for="rTime">Hora · Venezuela</label><input id="rTime" name="time" type="time" required></div><div class="field"><label for="rPeople">Personas (1–20, demo)</label><input id="rPeople" name="people" type="number" min="1" max="20" required></div><div class="field"><label for="rName">Nombre</label><input id="rName" name="name" autocomplete="off" maxlength="80" placeholder="Nombre de ejemplo" required></div><div class="field full"><label for="rPhone">Teléfono</label><input id="rPhone" name="phone" type="tel" autocomplete="off" maxlength="25" placeholder="Teléfono de ejemplo" required></div><div class="field full"><label for="rNotes">Notas <span>(opcional)</span></label><textarea id="rNotes" name="notes" maxlength="500"></textarea></div></div><div class="error" id="reservationError" role="alert"></div><button class="btn btn-dark" type="submit" style="width:100%">Revisar reserva <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></button></form><div id="reservationPreview"></div></div></div>
-<div class="modal" id="confirmModal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle" aria-hidden="true"><div class="modal-head"><h2 id="confirmTitle">Confirmación simulada</h2><button class="icon-btn" data-close aria-label="Cerrar confirmación"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-close"></use></svg></button></div><div class="modal-body" id="confirmBody"></div></div>
+  <main>
+    <div class="mark" aria-hidden="true">GV</div>
+    <p class="eyebrow">Gviso Web</p>
+    <h1>Esta demo no está disponible públicamente.</h1>
+    <p>Si quieres verla o conversar sobre una web para tu negocio, contacta a Gustavo.</p>
+    <a href="https://wa.me/34684249067?text=Hola%20Gustavo%2C%20quisiera%20ver%20la%20demo%20web" rel="noopener noreferrer">Solicitar acceso por WhatsApp</a>
+    <footer>Diseño web, apps y automatizaciones.</footer>
+  </main>
 </body>
 </html>
